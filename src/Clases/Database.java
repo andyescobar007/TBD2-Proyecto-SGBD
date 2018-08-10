@@ -152,6 +152,8 @@ public class Database {
         return sentencia;
        
     }
+     
+     
     
     public boolean isPalabraReservada(String pal ){
             String palabrasReservadas[]={"FROM","WHERE","MAX","CREATE","ALTER","SELECT"};

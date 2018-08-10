@@ -12,7 +12,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -55,7 +54,9 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         User="ANDY ESCOBAR";
         password="andyescobar007";
         SCHEMA=User;
+        
         initComponents();
+        lblSchema.setText(SCHEMA);
         this.setLocationRelativeTo(null);
         array_columnas=new ArrayList<>();
         database=new Database();
@@ -224,7 +225,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         TRIGGERS_btnUpdate = new javax.swing.JButton();
         pnlShowTrigger = new javax.swing.JPanel();
         jScrollPane15 = new javax.swing.JScrollPane();
-        table_showTriggers = new javax.swing.JTable();
+        TRIGGERS_tableTriggers = new javax.swing.JTable();
         pnlTriggerSQL = new javax.swing.JPanel();
         jScrollPane16 = new javax.swing.JScrollPane();
         txtArea_TriggerSQL = new javax.swing.JTextArea();
@@ -255,6 +256,58 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         TRIGGERS_btn_pnlAtras = new javax.swing.JButton();
         jLabel28 = new javax.swing.JLabel();
         VIEWS_Create_btnTxtASQL1 = new javax.swing.JButton();
+        PROCEDURE_pnlCreateProcedure = new javax.swing.JPanel();
+        PROCEDURES_Create_pnlProcedure = new javax.swing.JPanel();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        PROCEDURE_Create_txtNameProcedure = new javax.swing.JTextField();
+        PROCEDURE_Create_cmbSchema = new javax.swing.JComboBox<>();
+        PROCEDURE_Create_pnlSubMenu = new javax.swing.JPanel();
+        PROCEDURE_panelContentComponent = new javax.swing.JPanel();
+        jButton5 = new javax.swing.JButton();
+        pnlData = new javax.swing.JPanel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        PROCEDURE_txtNameParametro = new javax.swing.JTextField();
+        PROCEDURE_cmbModo = new javax.swing.JComboBox<>();
+        PROCEDURE_cmbDataType = new javax.swing.JComboBox<>();
+        jPanel15 = new javax.swing.JPanel();
+        jButton6 = new javax.swing.JButton();
+        jScrollPane23 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        PROCEDURE_Creaye_btnAceptar = new javax.swing.JButton();
+        PROCEDURE_Create_TextDLL = new javax.swing.JPanel();
+        jScrollPane19 = new javax.swing.JScrollPane();
+        PROCEDURE_Create_txtADDL = new javax.swing.JTextArea();
+        PROCEDURE_Create_btnCancelar = new javax.swing.JButton();
+        PROCEDURE_Create_btnAgregarProcedure = new javax.swing.JButton();
+        TRIGGERS_btn_pnlAtras1 = new javax.swing.JButton();
+        jLabel33 = new javax.swing.JLabel();
+        pnl_ManagerProcedure = new javax.swing.JPanel();
+        jScrollPane17 = new javax.swing.JScrollPane();
+        PROCEDURE_listProcedimientos = new javax.swing.JList<>();
+        jSeparator7 = new javax.swing.JSeparator();
+        TRIGGERS_btnCreateTriggers1 = new javax.swing.JButton();
+        jSeparator8 = new javax.swing.JSeparator();
+        PROCEDURE_btnShowProcedure = new javax.swing.JButton();
+        PROCEDURES_btnProcedureSQL = new javax.swing.JButton();
+        Procedure_btnDeleteProcedure = new javax.swing.JButton();
+        PROCEDURE_btnEditProcedure = new javax.swing.JButton();
+        pnl_ManagerProcedure_SubMenu = new javax.swing.JPanel();
+        pnlProcedureMain = new javax.swing.JPanel();
+        iconMainProcedure = new javax.swing.JLabel();
+        pnlEditProcedure = new javax.swing.JPanel();
+        jScrollPane20 = new javax.swing.JScrollPane();
+        PROCEDURE_txtArea_EditProcedure = new javax.swing.JTextArea();
+        PROCEDURE_btnUpdate = new javax.swing.JButton();
+        pnlShowProcedure = new javax.swing.JPanel();
+        jScrollPane21 = new javax.swing.JScrollPane();
+        PROCEDURE_tableProcedure = new javax.swing.JTable();
+        pnlProcedureSQL = new javax.swing.JPanel();
+        jScrollPane22 = new javax.swing.JScrollPane();
+        txtArea_ProcedureSQL = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -337,7 +390,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("TRIGGERS");
+        jLabel6.setText("PROCEDIMIENTOS");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel6MouseClicked(evt);
@@ -1034,6 +1087,12 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
             }
         });
         jScrollPane5.setViewportView(jTable3);
+        if (jTable3.getColumnModel().getColumnCount() > 0) {
+            jTable3.getColumnModel().getColumn(0).setHeaderValue("PK");
+            jTable3.getColumnModel().getColumn(3).setHeaderValue("Size");
+            jTable3.getColumnModel().getColumn(5).setResizable(false);
+            jTable3.getColumnModel().getColumn(5).setHeaderValue("Default");
+        }
 
         javax.swing.GroupLayout pnl_CT_ET_ColumnLayout = new javax.swing.GroupLayout(pnl_CT_ET_Column);
         pnl_CT_ET_Column.setLayout(pnl_CT_ET_ColumnLayout);
@@ -1849,7 +1908,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
 
         jScrollPane15.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        table_showTriggers.setModel(new javax.swing.table.DefaultTableModel(
+        TRIGGERS_tableTriggers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null}
@@ -1858,8 +1917,8 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
                 "Título 1", "Título 2", "Título 3", "Título 4"
             }
         ));
-        jScrollPane15.setViewportView(table_showTriggers);
-        table_showTriggers.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane15.setViewportView(TRIGGERS_tableTriggers);
+        TRIGGERS_tableTriggers.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         javax.swing.GroupLayout pnlShowTriggerLayout = new javax.swing.GroupLayout(pnlShowTrigger);
         pnlShowTrigger.setLayout(pnlShowTriggerLayout);
@@ -2274,6 +2333,607 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
 
         pnl_ManagerSubPanel.add(TRIGGERS_pnlCreateTrigger, "card3");
 
+        PROCEDURES_Create_pnlProcedure.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel14.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos Tabla"));
+
+        jLabel29.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel29.setText("SCHEMA");
+
+        jLabel30.setText("Nombre Procedimiento");
+
+        PROCEDURE_Create_txtNameProcedure.setBackground(new java.awt.Color(255, 255, 255));
+        PROCEDURE_Create_txtNameProcedure.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        PROCEDURE_Create_txtNameProcedure.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        PROCEDURE_Create_cmbSchema.setBackground(new java.awt.Color(255, 255, 255));
+        PROCEDURE_Create_cmbSchema.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        PROCEDURE_Create_cmbSchema.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                PROCEDURE_Create_cmbSchemaItemStateChanged(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(PROCEDURE_Create_cmbSchema, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
+                .addComponent(jLabel30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(PROCEDURE_Create_txtNameProcedure, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(215, 215, 215))
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PROCEDURE_Create_txtNameProcedure, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PROCEDURE_Create_cmbSchema, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12))
+        );
+
+        PROCEDURE_Create_pnlSubMenu.setBackground(new java.awt.Color(255, 255, 255));
+        PROCEDURE_Create_pnlSubMenu.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        PROCEDURE_Create_pnlSubMenu.setLayout(new java.awt.CardLayout());
+
+        PROCEDURE_panelContentComponent.setBackground(new java.awt.Color(255, 255, 255));
+
+        jButton5.setBackground(new java.awt.Color(255, 255, 255));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/add-icon24px.png"))); // NOI18N
+        jButton5.setOpaque(false);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        pnlData.setBackground(new java.awt.Color(255, 255, 255));
+        pnlData.setBorder(javax.swing.BorderFactory.createTitledBorder("Agregar Columna"));
+
+        jLabel34.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel34.setText("Nombre");
+
+        jLabel35.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel35.setText("Modo");
+
+        jLabel36.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel36.setText("Tipo de Dato");
+
+        PROCEDURE_txtNameParametro.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        PROCEDURE_txtNameParametro.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        PROCEDURE_cmbModo.setBackground(new java.awt.Color(255, 255, 255));
+
+        PROCEDURE_cmbDataType.setBackground(new java.awt.Color(255, 255, 255));
+        PROCEDURE_cmbDataType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "IN", "OUT", "IN OUT" }));
+
+        javax.swing.GroupLayout pnlDataLayout = new javax.swing.GroupLayout(pnlData);
+        pnlData.setLayout(pnlDataLayout);
+        pnlDataLayout.setHorizontalGroup(
+            pnlDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDataLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PROCEDURE_txtNameParametro, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PROCEDURE_cmbModo, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel36)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(PROCEDURE_cmbDataType, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(84, Short.MAX_VALUE))
+        );
+        pnlDataLayout.setVerticalGroup(
+            pnlDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDataLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel34)
+                    .addComponent(PROCEDURE_txtNameParametro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel35)
+                    .addComponent(PROCEDURE_cmbModo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel36)
+                    .addComponent(PROCEDURE_cmbDataType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(374, 374, 374))
+        );
+
+        jPanel15.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel15.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        jButton6.setBackground(new java.awt.Color(255, 255, 255));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/delete-icon24px.png"))); // NOI18N
+        jButton6.setOpaque(false);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jButton6)
+                .addContainerGap(60, Short.MAX_VALUE))
+        );
+
+        jScrollPane23.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Name", "Model", "DataType"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane23.setViewportView(jTable4);
+
+        PROCEDURE_Creaye_btnAceptar.setBackground(new java.awt.Color(255, 255, 255));
+        PROCEDURE_Creaye_btnAceptar.setText("Aceptar");
+        PROCEDURE_Creaye_btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PROCEDURE_Creaye_btnAceptarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PROCEDURE_panelContentComponentLayout = new javax.swing.GroupLayout(PROCEDURE_panelContentComponent);
+        PROCEDURE_panelContentComponent.setLayout(PROCEDURE_panelContentComponentLayout);
+        PROCEDURE_panelContentComponentLayout.setHorizontalGroup(
+            PROCEDURE_panelContentComponentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PROCEDURE_panelContentComponentLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PROCEDURE_panelContentComponentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane23)
+                    .addComponent(pnlData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PROCEDURE_panelContentComponentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PROCEDURE_panelContentComponentLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PROCEDURE_Creaye_btnAceptar)
+                .addGap(58, 58, 58))
+        );
+        PROCEDURE_panelContentComponentLayout.setVerticalGroup(
+            PROCEDURE_panelContentComponentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PROCEDURE_panelContentComponentLayout.createSequentialGroup()
+                .addGroup(PROCEDURE_panelContentComponentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PROCEDURE_panelContentComponentLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(pnlData, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PROCEDURE_panelContentComponentLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(jButton5)))
+                .addGap(18, 18, 18)
+                .addGroup(PROCEDURE_panelContentComponentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(PROCEDURE_Creaye_btnAceptar)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        PROCEDURE_Create_pnlSubMenu.add(PROCEDURE_panelContentComponent, "card3");
+
+        PROCEDURE_Create_TextDLL.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane19.setBackground(new java.awt.Color(255, 255, 255));
+
+        PROCEDURE_Create_txtADDL.setBackground(new java.awt.Color(255, 255, 255));
+        PROCEDURE_Create_txtADDL.setColumns(20);
+        PROCEDURE_Create_txtADDL.setForeground(new java.awt.Color(51, 51, 51));
+        PROCEDURE_Create_txtADDL.setRows(5);
+        jScrollPane19.setViewportView(PROCEDURE_Create_txtADDL);
+
+        PROCEDURE_Create_btnCancelar.setBackground(new java.awt.Color(255, 255, 255));
+        PROCEDURE_Create_btnCancelar.setText("Cancelar");
+        PROCEDURE_Create_btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PROCEDURE_Create_btnCancelarActionPerformed(evt);
+            }
+        });
+
+        PROCEDURE_Create_btnAgregarProcedure.setBackground(new java.awt.Color(255, 255, 255));
+        PROCEDURE_Create_btnAgregarProcedure.setText("Crear");
+        PROCEDURE_Create_btnAgregarProcedure.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PROCEDURE_Create_btnAgregarProcedureActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PROCEDURE_Create_TextDLLLayout = new javax.swing.GroupLayout(PROCEDURE_Create_TextDLL);
+        PROCEDURE_Create_TextDLL.setLayout(PROCEDURE_Create_TextDLLLayout);
+        PROCEDURE_Create_TextDLLLayout.setHorizontalGroup(
+            PROCEDURE_Create_TextDLLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PROCEDURE_Create_TextDLLLayout.createSequentialGroup()
+                .addContainerGap(732, Short.MAX_VALUE)
+                .addComponent(PROCEDURE_Create_btnCancelar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(PROCEDURE_Create_btnAgregarProcedure, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52))
+            .addGroup(PROCEDURE_Create_TextDLLLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 906, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        PROCEDURE_Create_TextDLLLayout.setVerticalGroup(
+            PROCEDURE_Create_TextDLLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PROCEDURE_Create_TextDLLLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PROCEDURE_Create_TextDLLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(PROCEDURE_Create_btnCancelar)
+                    .addComponent(PROCEDURE_Create_btnAgregarProcedure))
+                .addGap(70, 70, 70))
+        );
+
+        PROCEDURE_Create_pnlSubMenu.add(PROCEDURE_Create_TextDLL, "card3");
+
+        TRIGGERS_btn_pnlAtras1.setBackground(new java.awt.Color(255, 255, 255));
+        TRIGGERS_btn_pnlAtras1.setText("Atras");
+        TRIGGERS_btn_pnlAtras1.setOpaque(false);
+        TRIGGERS_btn_pnlAtras1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TRIGGERS_btn_pnlAtras1ActionPerformed(evt);
+            }
+        });
+
+        jLabel33.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel33.setText("CREAR PROCEDIMIENTOS");
+
+        javax.swing.GroupLayout PROCEDURES_Create_pnlProcedureLayout = new javax.swing.GroupLayout(PROCEDURES_Create_pnlProcedure);
+        PROCEDURES_Create_pnlProcedure.setLayout(PROCEDURES_Create_pnlProcedureLayout);
+        PROCEDURES_Create_pnlProcedureLayout.setHorizontalGroup(
+            PROCEDURES_Create_pnlProcedureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PROCEDURES_Create_pnlProcedureLayout.createSequentialGroup()
+                .addGroup(PROCEDURES_Create_pnlProcedureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PROCEDURES_Create_pnlProcedureLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(PROCEDURES_Create_pnlProcedureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(PROCEDURE_Create_pnlSubMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 958, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(PROCEDURES_Create_pnlProcedureLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(TRIGGERS_btn_pnlAtras1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(112, 112, 112)
+                        .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        PROCEDURES_Create_pnlProcedureLayout.setVerticalGroup(
+            PROCEDURES_Create_pnlProcedureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PROCEDURES_Create_pnlProcedureLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(PROCEDURES_Create_pnlProcedureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(TRIGGERS_btn_pnlAtras1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addComponent(PROCEDURE_Create_pnlSubMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(77, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout PROCEDURE_pnlCreateProcedureLayout = new javax.swing.GroupLayout(PROCEDURE_pnlCreateProcedure);
+        PROCEDURE_pnlCreateProcedure.setLayout(PROCEDURE_pnlCreateProcedureLayout);
+        PROCEDURE_pnlCreateProcedureLayout.setHorizontalGroup(
+            PROCEDURE_pnlCreateProcedureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1005, Short.MAX_VALUE)
+            .addGroup(PROCEDURE_pnlCreateProcedureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(PROCEDURES_Create_pnlProcedure, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        PROCEDURE_pnlCreateProcedureLayout.setVerticalGroup(
+            PROCEDURE_pnlCreateProcedureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 572, Short.MAX_VALUE)
+            .addGroup(PROCEDURE_pnlCreateProcedureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(PROCEDURES_Create_pnlProcedure, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pnl_ManagerSubPanel.add(PROCEDURE_pnlCreateProcedure, "card3");
+
+        pnl_ManagerProcedure.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane17.setBackground(new java.awt.Color(255, 255, 255));
+
+        PROCEDURE_listProcedimientos.setBackground(new java.awt.Color(255, 255, 255));
+        PROCEDURE_listProcedimientos.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        PROCEDURE_listProcedimientos.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        PROCEDURE_listProcedimientos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane17.setViewportView(PROCEDURE_listProcedimientos);
+
+        jSeparator7.setBackground(new java.awt.Color(0, 102, 102));
+
+        TRIGGERS_btnCreateTriggers1.setBackground(new java.awt.Color(255, 255, 255));
+        TRIGGERS_btnCreateTriggers1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/new_table-icon18px.png"))); // NOI18N
+        TRIGGERS_btnCreateTriggers1.setText("CREAR PROCEDIMIENTO");
+        TRIGGERS_btnCreateTriggers1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        TRIGGERS_btnCreateTriggers1.setBorderPainted(false);
+        TRIGGERS_btnCreateTriggers1.setOpaque(false);
+        TRIGGERS_btnCreateTriggers1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TRIGGERS_btnCreateTriggers1ActionPerformed(evt);
+            }
+        });
+
+        jSeparator8.setBackground(new java.awt.Color(0, 102, 102));
+        jSeparator8.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        PROCEDURE_btnShowProcedure.setBackground(new java.awt.Color(255, 255, 255));
+        PROCEDURE_btnShowProcedure.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/showTable-icon24px.png"))); // NOI18N
+        PROCEDURE_btnShowProcedure.setToolTipText("Mostrar Tabla");
+        PROCEDURE_btnShowProcedure.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        PROCEDURE_btnShowProcedure.setOpaque(false);
+        PROCEDURE_btnShowProcedure.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PROCEDURE_btnShowProcedureActionPerformed(evt);
+            }
+        });
+
+        PROCEDURES_btnProcedureSQL.setBackground(new java.awt.Color(255, 255, 255));
+        PROCEDURES_btnProcedureSQL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/showSQL-icon24px.png"))); // NOI18N
+        PROCEDURES_btnProcedureSQL.setToolTipText("Mostrar SQL");
+        PROCEDURES_btnProcedureSQL.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        PROCEDURES_btnProcedureSQL.setOpaque(false);
+        PROCEDURES_btnProcedureSQL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PROCEDURES_btnProcedureSQLActionPerformed(evt);
+            }
+        });
+
+        Procedure_btnDeleteProcedure.setBackground(new java.awt.Color(255, 255, 255));
+        Procedure_btnDeleteProcedure.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/trash-icon24px.png"))); // NOI18N
+        Procedure_btnDeleteProcedure.setToolTipText("Eliminar Tabla");
+        Procedure_btnDeleteProcedure.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Procedure_btnDeleteProcedure.setOpaque(false);
+        Procedure_btnDeleteProcedure.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Procedure_btnDeleteProcedureActionPerformed(evt);
+            }
+        });
+
+        PROCEDURE_btnEditProcedure.setBackground(new java.awt.Color(255, 255, 255));
+        PROCEDURE_btnEditProcedure.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/editTable-icon24px.png"))); // NOI18N
+        PROCEDURE_btnEditProcedure.setToolTipText("Editar Tabla");
+        PROCEDURE_btnEditProcedure.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        PROCEDURE_btnEditProcedure.setOpaque(false);
+        PROCEDURE_btnEditProcedure.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PROCEDURE_btnEditProcedureActionPerformed(evt);
+            }
+        });
+
+        pnl_ManagerProcedure_SubMenu.setLayout(new java.awt.CardLayout());
+
+        pnlProcedureMain.setBackground(new java.awt.Color(255, 255, 255));
+
+        iconMainProcedure.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        iconMainProcedure.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/funtion-icon120px.png"))); // NOI18N
+
+        javax.swing.GroupLayout pnlProcedureMainLayout = new javax.swing.GroupLayout(pnlProcedureMain);
+        pnlProcedureMain.setLayout(pnlProcedureMainLayout);
+        pnlProcedureMainLayout.setHorizontalGroup(
+            pnlProcedureMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlProcedureMainLayout.createSequentialGroup()
+                .addGap(161, 161, 161)
+                .addComponent(iconMainProcedure, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(140, Short.MAX_VALUE))
+        );
+        pnlProcedureMainLayout.setVerticalGroup(
+            pnlProcedureMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlProcedureMainLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(iconMainProcedure, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(67, Short.MAX_VALUE))
+        );
+
+        pnl_ManagerProcedure_SubMenu.add(pnlProcedureMain, "card2");
+
+        pnlEditProcedure.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane20.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane20.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jScrollPane20.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        PROCEDURE_txtArea_EditProcedure.setColumns(5);
+        PROCEDURE_txtArea_EditProcedure.setLineWrap(true);
+        PROCEDURE_txtArea_EditProcedure.setRows(5);
+        jScrollPane20.setViewportView(PROCEDURE_txtArea_EditProcedure);
+
+        PROCEDURE_btnUpdate.setBackground(new java.awt.Color(255, 255, 255));
+        PROCEDURE_btnUpdate.setText("Actualizar");
+        PROCEDURE_btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PROCEDURE_btnUpdateActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlEditProcedureLayout = new javax.swing.GroupLayout(pnlEditProcedure);
+        pnlEditProcedure.setLayout(pnlEditProcedureLayout);
+        pnlEditProcedureLayout.setHorizontalGroup(
+            pnlEditProcedureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEditProcedureLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(50, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEditProcedureLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PROCEDURE_btnUpdate)
+                .addGap(79, 79, 79))
+        );
+        pnlEditProcedureLayout.setVerticalGroup(
+            pnlEditProcedureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEditProcedureLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(PROCEDURE_btnUpdate)
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+
+        pnl_ManagerProcedure_SubMenu.add(pnlEditProcedure, "card3");
+
+        pnlShowProcedure.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane21.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        PROCEDURE_tableProcedure.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Título 1", "Título 2", "Título 3", "Título 4"
+            }
+        ));
+        jScrollPane21.setViewportView(PROCEDURE_tableProcedure);
+        PROCEDURE_tableProcedure.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+
+        javax.swing.GroupLayout pnlShowProcedureLayout = new javax.swing.GroupLayout(pnlShowProcedure);
+        pnlShowProcedure.setLayout(pnlShowProcedureLayout);
+        pnlShowProcedureLayout.setHorizontalGroup(
+            pnlShowProcedureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlShowProcedureLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane21, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        pnlShowProcedureLayout.setVerticalGroup(
+            pnlShowProcedureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlShowProcedureLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
+        );
+
+        pnl_ManagerProcedure_SubMenu.add(pnlShowProcedure, "card3");
+
+        pnlProcedureSQL.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane22.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane22.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        txtArea_ProcedureSQL.setColumns(20);
+        txtArea_ProcedureSQL.setLineWrap(true);
+        txtArea_ProcedureSQL.setRows(5);
+        txtArea_ProcedureSQL.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jScrollPane22.setViewportView(txtArea_ProcedureSQL);
+
+        javax.swing.GroupLayout pnlProcedureSQLLayout = new javax.swing.GroupLayout(pnlProcedureSQL);
+        pnlProcedureSQL.setLayout(pnlProcedureSQLLayout);
+        pnlProcedureSQLLayout.setHorizontalGroup(
+            pnlProcedureSQLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlProcedureSQLLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane22, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        pnlProcedureSQLLayout.setVerticalGroup(
+            pnlProcedureSQLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlProcedureSQLLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane22, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        pnl_ManagerProcedure_SubMenu.add(pnlProcedureSQL, "card5");
+
+        javax.swing.GroupLayout pnl_ManagerProcedureLayout = new javax.swing.GroupLayout(pnl_ManagerProcedure);
+        pnl_ManagerProcedure.setLayout(pnl_ManagerProcedureLayout);
+        pnl_ManagerProcedureLayout.setHorizontalGroup(
+            pnl_ManagerProcedureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(pnl_ManagerProcedureLayout.createSequentialGroup()
+                .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnl_ManagerProcedureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnl_ManagerProcedureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(PROCEDURE_btnShowProcedure, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(PROCEDURES_btnProcedureSQL, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Procedure_btnDeleteProcedure, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PROCEDURE_btnEditProcedure, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pnl_ManagerProcedure_SubMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 733, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(pnl_ManagerProcedureLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(TRIGGERS_btnCreateTriggers1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnl_ManagerProcedureLayout.setVerticalGroup(
+            pnl_ManagerProcedureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_ManagerProcedureLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(TRIGGERS_btnCreateTriggers1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnl_ManagerProcedureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnl_ManagerProcedureLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(PROCEDURE_btnShowProcedure, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Procedure_btnDeleteProcedure, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(PROCEDURE_btnEditProcedure, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(PROCEDURES_btnProcedureSQL, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnl_ManagerProcedureLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnl_ManagerProcedureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pnl_ManagerProcedure_SubMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(166, 166, 166))
+        );
+
+        pnl_ManagerSubPanel.add(pnl_ManagerProcedure, "card4");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -2316,7 +2976,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         selectBotonColor(jLabel3);
-        cambiarPanelTable_CreateTable_ManagerTable(pnl_ManagerTable);
+        cambiarParentContainer(pnl_ManagerTable);
         cambiarPanelTable(pnlTableMain);
         
         //pnl_ManagerTable.setVisible(true);
@@ -2326,7 +2986,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         selectBotonColor(jLabel4);
-        cambiarPanelTable_CreateTable_ManagerTable(pnl_ManagerViews);
+        cambiarParentContainer(pnl_ManagerViews);
         VIEWS_cargarListViews();
         VIEWS_cambiarPanelSubMenu(pnlViewMain);
        
@@ -2334,12 +2994,13 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         selectBotonColor(jLabel5);
-        cambiarPanelTable_CreateTable_ManagerTable(pnl_ManagerTriggers);
+        cambiarParentContainer(pnl_ManagerTriggers);
         TRIGGERS_cargarList();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         selectBotonColor(jLabel6);
+        cargarProcedimientos();
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
@@ -2390,11 +3051,11 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     }//GEN-LAST:event_btnShowSQLActionPerformed
 
     private void btn_pnlCTAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pnlCTAtrasActionPerformed
-        cambiarPanelTable_CreateTable_ManagerTable(pnl_ManagerTable);
+        cambiarParentContainer(pnl_ManagerTable);
     }//GEN-LAST:event_btn_pnlCTAtrasActionPerformed
 
     private void btnNewTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewTableActionPerformed
-        cambiarPanelTable_CreateTable_ManagerTable(pnl_ManagerTable_Create);
+        cambiarParentContainer(pnl_ManagerTable_Create);
         CT_cambiarPanelEditColumnaTable(pnl_CT_ET_Column);
         CT_cargarTipoDatos();
         CT_cargarComboBoxSchemas();
@@ -2489,7 +3150,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void VIEWS_btnCreateViewsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VIEWS_btnCreateViewsActionPerformed
-        cambiarPanelTable_CreateTable_ManagerTable(VIEW_pnlCreateView);
+        cambiarParentContainer(VIEW_pnlCreateView);
         VIEWS_Create_cargarComboBox();
         VIEWS_Create_reset();
     }//GEN-LAST:event_VIEWS_btnCreateViewsActionPerformed
@@ -2547,7 +3208,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     }//GEN-LAST:event_CT_btnAgregarTabla1ActionPerformed
 
     private void VIEWS_btn_pnlAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VIEWS_btn_pnlAtrasActionPerformed
-        cambiarPanelTable_CreateTable_ManagerTable(pnl_ManagerViews);
+        cambiarParentContainer(pnl_ManagerViews);
     }//GEN-LAST:event_VIEWS_btn_pnlAtrasActionPerformed
 
     private void VIEWS_Create_btnTxtASQLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VIEWS_Create_btnTxtASQLActionPerformed
@@ -2563,14 +3224,14 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private void CT_btnCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CT_btnCancelar1ActionPerformed
         int op=JOptionPane.showConfirmDialog(null,"¿Desea cancelar la operacion?","Warning",JOptionPane.YES_NO_OPTION);
         if(op==JOptionPane.YES_OPTION){
-            cambiarPanelTable_CreateTable_ManagerTable(pnl_ManagerViews);
+            cambiarParentContainer(pnl_ManagerViews);
             VIEWS_Create_reset();
         }
    
     }//GEN-LAST:event_CT_btnCancelar1ActionPerformed
 
     private void TRIGGERS_btnCreateTriggersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TRIGGERS_btnCreateTriggersActionPerformed
-        cambiarPanelTable_CreateTable_ManagerTable(TRIGGERS_pnlCreateTrigger);
+        cambiarParentContainer(TRIGGERS_pnlCreateTrigger);
         TRIGGERS_Create_cargarData();
     }//GEN-LAST:event_TRIGGERS_btnCreateTriggersActionPerformed
 
@@ -2579,7 +3240,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
             String sql="SELECT OWNER,TRIGSCHEMA,TRIGNAME,TABNAME,TRIGTIME,TRIGEVENT,EVENTUPDATE,\n" +
                         "EVENTDELETE,EVENTINSERT,CREATE_TIME,LAST_REGEN_TIME\n" +
                         "FROM SYSCAT.TRIGGERS WHERE TRIGNAME = '"+TRIGGERS_listTriggers.getSelectedValue()+"'";
-            cargarInfoTable(sql, table_showTriggers);
+            cargarInfoTable(sql, TRIGGERS_tableTriggers);
             TRIGGERS_cambiarPanel(pnlShowTrigger);
         }else{
            JOptionPane.showMessageDialog(null,"No hay ningun Trigger seleccionado","TRIGERS",JOptionPane.WARNING_MESSAGE);
@@ -2624,7 +3285,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     }//GEN-LAST:event_TRIGGERS_btnUpdateActionPerformed
 
     private void TRIGGERS_btn_pnlAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TRIGGERS_btn_pnlAtrasActionPerformed
-        cambiarPanelTable_CreateTable_ManagerTable(pnl_ManagerTriggers);
+        cambiarParentContainer(pnl_ManagerTriggers);
     }//GEN-LAST:event_TRIGGERS_btn_pnlAtrasActionPerformed
 
     private void TRIGGERS_Create_btnAgregarTriggerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TRIGGERS_Create_btnAgregarTriggerActionPerformed
@@ -2632,7 +3293,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
             String script=TRIGGERS_Create_txtADDL.getText();
             database.ejecutarOperacion(script);
             JOptionPane.showMessageDialog(null, "El Trigger fue creado exitosamente");
-            cambiarPanelTable_CreateTable_ManagerTable(pnl_ManagerTriggers);
+            cambiarParentContainer(pnl_ManagerTriggers);
             TRIGGERS_cargarList();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null,"Error al ejecutar operacion","Creacion Trigger",JOptionPane.ERROR_MESSAGE);
@@ -2644,7 +3305,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
        int op=JOptionPane.showConfirmDialog(null,"¿Desea cancelar la operacion?\nSe borra todo el contenido creado","Cancelar",JOptionPane.YES_NO_OPTION);
        if(op==JOptionPane.YES_OPTION){
            TRIGGERS_Create_cargarData();
-           cambiarPanelTable_CreateTable_ManagerTable(pnl_ManagerTriggers);
+           cambiarParentContainer(pnl_ManagerTriggers);
        }
     }//GEN-LAST:event_TRIGGERS_Create_btnCancelarActionPerformed
 
@@ -2669,6 +3330,80 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_TRIGGERS_Create_cmbShowSchemasItemStateChanged
+
+    private void PROCEDURE_Create_cmbSchemaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_PROCEDURE_Create_cmbSchemaItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PROCEDURE_Create_cmbSchemaItemStateChanged
+
+    private void PROCEDURE_Create_btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PROCEDURE_Create_btnCancelarActionPerformed
+        changePanels(PROCEDURE_Create_pnlSubMenu, PROCEDURE_panelContentComponent);
+    }//GEN-LAST:event_PROCEDURE_Create_btnCancelarActionPerformed
+
+    private void PROCEDURE_Create_btnAgregarProcedureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PROCEDURE_Create_btnAgregarProcedureActionPerformed
+        try {
+            database.ejecutarOperacion(PROCEDURE_Create_txtADDL.getText());
+            JOptionPane.showMessageDialog(null,"Procedimiento creado exitosamente");
+            PROCEDURE_Create_cargarData();
+            cambiarParentContainer(pnl_ManagerProcedure);
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Error durante la operacion\nNose pudo crear el procedimiento","Crear Procedimiento",JOptionPane.ERROR_MESSAGE);
+            Logger.getLogger(JF_PrincipalPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_PROCEDURE_Create_btnAgregarProcedureActionPerformed
+
+    private void TRIGGERS_btn_pnlAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TRIGGERS_btn_pnlAtras1ActionPerformed
+        cambiarParentContainer(pnl_ManagerProcedure);
+    }//GEN-LAST:event_TRIGGERS_btn_pnlAtras1ActionPerformed
+
+    private void TRIGGERS_btnCreateTriggers1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TRIGGERS_btnCreateTriggers1ActionPerformed
+        cambiarParentContainer(PROCEDURES_Create_pnlProcedure);
+        PROCEDURE_Create_cargarData();
+    }//GEN-LAST:event_TRIGGERS_btnCreateTriggers1ActionPerformed
+
+    private void PROCEDURE_btnShowProcedureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PROCEDURE_btnShowProcedureActionPerformed
+        PROCEDURE_mostrarInformacion();
+        PROCEDURE_cambiarPanelSubMenu(pnlShowProcedure);
+    }//GEN-LAST:event_PROCEDURE_btnShowProcedureActionPerformed
+
+    private void PROCEDURES_btnProcedureSQLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PROCEDURES_btnProcedureSQLActionPerformed
+      PROCEDURE_cargarDLL();
+      PROCEDURE_cambiarPanelSubMenu(pnlProcedureSQL);
+      
+    }//GEN-LAST:event_PROCEDURES_btnProcedureSQLActionPerformed
+
+    private void Procedure_btnDeleteProcedureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Procedure_btnDeleteProcedureActionPerformed
+      PROCEDURE_eliminarProcedure();
+    }//GEN-LAST:event_Procedure_btnDeleteProcedureActionPerformed
+
+    private void PROCEDURE_btnEditProcedureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PROCEDURE_btnEditProcedureActionPerformed
+       PROCEDURE_cargarDLL();
+       PROCEDURE_txtArea_EditProcedure.setText(txtArea_ProcedureSQL.getText());
+        PROCEDURE_cambiarPanelSubMenu(pnlEditProcedure);
+        
+       
+    }//GEN-LAST:event_PROCEDURE_btnEditProcedureActionPerformed
+
+    private void PROCEDURE_btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PROCEDURE_btnUpdateActionPerformed
+       PROCEDURE_UpdateProcedure();
+    }//GEN-LAST:event_PROCEDURE_btnUpdateActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       if(PROCEDURE_txtNameParametro.getText().length()>0){
+            PROCEDURE_addParamentro();
+       }else{
+            JOptionPane.showMessageDialog(null,"Existe datos vacios, porfavor ingrese los datos","",JOptionPane.WARNING_MESSAGE);
+       }
+       
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void PROCEDURE_Creaye_btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PROCEDURE_Creaye_btnAceptarActionPerformed
+        changePanels(PROCEDURE_Create_pnlSubMenu,PROCEDURE_Create_TextDLL);
+        PROCEDURE_Create_prepareData();
+    }//GEN-LAST:event_PROCEDURE_Creaye_btnAceptarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2714,6 +3449,28 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JButton CT_btnShowAddColumn;
     private javax.swing.JButton CT_btnShowSQL;
     private javax.swing.JTextArea CT_txtAreaSQLScript;
+    private javax.swing.JPanel PROCEDURES_Create_pnlProcedure;
+    private javax.swing.JButton PROCEDURES_btnProcedureSQL;
+    private javax.swing.JPanel PROCEDURE_Create_TextDLL;
+    private javax.swing.JButton PROCEDURE_Create_btnAgregarProcedure;
+    private javax.swing.JButton PROCEDURE_Create_btnCancelar;
+    private javax.swing.JComboBox<String> PROCEDURE_Create_cmbSchema;
+    private javax.swing.JPanel PROCEDURE_Create_pnlSubMenu;
+    private javax.swing.JTextArea PROCEDURE_Create_txtADDL;
+    private javax.swing.JTextField PROCEDURE_Create_txtNameProcedure;
+    private javax.swing.JButton PROCEDURE_Creaye_btnAceptar;
+    private javax.swing.JButton PROCEDURE_btnEditProcedure;
+    private javax.swing.JButton PROCEDURE_btnShowProcedure;
+    private javax.swing.JButton PROCEDURE_btnUpdate;
+    private javax.swing.JComboBox<String> PROCEDURE_cmbDataType;
+    private javax.swing.JComboBox<String> PROCEDURE_cmbModo;
+    private javax.swing.JList<String> PROCEDURE_listProcedimientos;
+    private javax.swing.JPanel PROCEDURE_panelContentComponent;
+    private javax.swing.JPanel PROCEDURE_pnlCreateProcedure;
+    private javax.swing.JTable PROCEDURE_tableProcedure;
+    private javax.swing.JTextArea PROCEDURE_txtArea_EditProcedure;
+    private javax.swing.JTextField PROCEDURE_txtNameParametro;
+    private javax.swing.JButton Procedure_btnDeleteProcedure;
     private javax.swing.JPanel TRIGGERS_Create_Data;
     private javax.swing.JPanel TRIGGERS_Create_TextDLL;
     private javax.swing.JButton TRIGGERS_Create_btnAgregarTrigger;
@@ -2729,14 +3486,17 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JTextArea TRIGGERS_Create_txtADDL;
     private javax.swing.JTextField TRIGGERS_Create_txtNameTriggers;
     private javax.swing.JButton TRIGGERS_btnCreateTriggers;
+    private javax.swing.JButton TRIGGERS_btnCreateTriggers1;
     private javax.swing.JButton TRIGGERS_btnDeleteTriggers;
     private javax.swing.JButton TRIGGERS_btnEditTriggers;
     private javax.swing.JButton TRIGGERS_btnShowTriggers;
     private javax.swing.JButton TRIGGERS_btnTriggersSQL;
     private javax.swing.JButton TRIGGERS_btnUpdate;
     private javax.swing.JButton TRIGGERS_btn_pnlAtras;
+    private javax.swing.JButton TRIGGERS_btn_pnlAtras1;
     private javax.swing.JList<String> TRIGGERS_listTriggers;
     private javax.swing.JPanel TRIGGERS_pnlCreateTrigger;
+    private javax.swing.JTable TRIGGERS_tableTriggers;
     private javax.swing.JTextArea TRIGGERS_txtArea_EditTriggers;
     private javax.swing.JPanel VIEWS_Create_TextAreaSQL;
     private javax.swing.JPanel VIEWS_Create_TextDLL;
@@ -2775,12 +3535,15 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmbDataType1;
     private javax.swing.JPanel contentEvent;
     private javax.swing.ButtonGroup gruopButton_TriggerschkTiming;
+    private javax.swing.JLabel iconMainProcedure;
     private javax.swing.JLabel iconMainTrigger;
     private javax.swing.JLabel iconMainView;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2802,7 +3565,13 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -2814,6 +3583,8 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
@@ -2827,8 +3598,14 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane17;
     private javax.swing.JScrollPane jScrollPane18;
+    private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane20;
+    private javax.swing.JScrollPane jScrollPane21;
+    private javax.swing.JScrollPane jScrollPane22;
+    private javax.swing.JScrollPane jScrollPane23;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -2842,16 +3619,24 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblSchema;
     private javax.swing.JList<String> listTable;
     private javax.swing.JPanel pEncabezado;
     private javax.swing.JPanel panelLateral;
+    private javax.swing.JPanel pnlData;
+    private javax.swing.JPanel pnlEditProcedure;
     private javax.swing.JPanel pnlEditTrigger;
     private javax.swing.JPanel pnlEditView;
+    private javax.swing.JPanel pnlProcedureMain;
+    private javax.swing.JPanel pnlProcedureSQL;
+    private javax.swing.JPanel pnlShowProcedure;
     private javax.swing.JPanel pnlShowTrigger;
     private javax.swing.JPanel pnlShowViews;
     private javax.swing.JPanel pnlTableMain;
@@ -2866,6 +3651,8 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JPanel pnl_CT_EditTable1;
     private javax.swing.JPanel pnl_CT_SQLPanel;
     private javax.swing.JPanel pnl_EditTable;
+    private javax.swing.JPanel pnl_ManagerProcedure;
+    private javax.swing.JPanel pnl_ManagerProcedure_SubMenu;
     private javax.swing.JPanel pnl_ManagerSubPanel;
     private javax.swing.JPanel pnl_ManagerTable;
     private javax.swing.JPanel pnl_ManagerTable_Create;
@@ -2875,8 +3662,8 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JPanel pnl_ManagerViews_SubMenu;
     private javax.swing.JPanel pnl_ShowTable;
     private javax.swing.JPanel pnl_tableManager;
-    private javax.swing.JTable table_showTriggers;
     private javax.swing.JTable table_showViews;
+    private javax.swing.JTextArea txtArea_ProcedureSQL;
     private javax.swing.JTextArea txtArea_TriggerSQL;
     private javax.swing.JTextArea txtArea_ViewSQL;
     private javax.swing.JTextField txtCT_NombreTabla;
@@ -2923,7 +3710,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         
     }
     
-    public void cambiarPanelTable_CreateTable_ManagerTable(JPanel pnl){
+    public void cambiarParentContainer(JPanel pnl){
         pnl_ManagerSubPanel.removeAll();
         pnl_ManagerSubPanel.add(pnl);
         pnl_ManagerSubPanel.repaint();
@@ -3388,7 +4175,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private void VIEWS_Create_crearView(){
         try {
             database.ejecutarOperacion(VIEWS_Create_getDLL());
-            cambiarPanelTable_CreateTable_ManagerTable(pnl_ManagerViews);
+            cambiarParentContainer(pnl_ManagerViews);
             VIEWS_cargarListViews();
             VIEWS_Create_reset();
             
@@ -3429,8 +4216,10 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
             Object row[]=new Object[cantColumnas];
             int con=0;
              while(rs.next()){
+                 System.out.println(rs.getString(1));
                  for (int i = 0; i < cantColumnas; i++) {
                      row[i]=rs.getString(i+1);
+                     //System.out.println(rs.getString(i+1));
                  }
                  
              }
@@ -3520,6 +4309,137 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Seleccione un Trigger","Trigger",JOptionPane.WARNING_MESSAGE);
         }
     }
+
+    private void cargarProcedimientos() {
+        cambiarParentContainer(pnl_ManagerProcedure);
+        PROCEDURE_cambiarPanelSubMenu(pnlProcedureMain);
+        String sql ="SELECT PROCNAME FROM SYSCAT.PROCEDURES WHERE PROCSCHEMA =    '"+SCHEMA+"'";
+        cargarList(sql, PROCEDURE_listProcedimientos);
+    }
+    
+    private void PROCEDURE_cargarDLL(){
+        String sql="SELECT TEXT FROM SYSCAT.PROCEDURES WHERE PROCSCHEMA = '"+SCHEMA+"' AND PROCNAME ='"+PROCEDURE_listProcedimientos.getSelectedValue().toString()+"'";
+        cargarTextArea(sql, txtArea_ProcedureSQL);
+        
+    }
+    
+    private void PROCEDURE_Create_cargarData(){
+        String sql="SELECT SCHEMANAME FROM SYSCAT.SCHEMATA";
+        String sql2="SELECT NAME FROM SYSIBM.SYSDATATYPES WHERE SCHEMA='SYSIBM'";
+        cargarDatosComboxBox(sql,PROCEDURE_Create_cmbSchema);
+        cargarDatosComboxBox(sql2,PROCEDURE_cmbDataType);
+        PROCEDURE_cmbModo.removeAllItems();
+        PROCEDURE_cmbModo.addItem("IN");
+        PROCEDURE_cmbModo.addItem("OUT");
+        PROCEDURE_cmbModo.addItem("INOUT");
+        PROCEDURE_Create_txtNameProcedure.setText("");
+        PROCEDURE_txtNameParametro.setText("");
+        PROCEDURE_cmbDataType.setSelectedIndex(-1);
+        PROCEDURE_cmbModo.setSelectedIndex(-1);
+        jTable4.removeAll();
+        PROCEDURE_Create_cmbSchema.setSelectedIndex(-1);
+    }
+    private void PROCEDURE_cambiarPanelSubMenu(JPanel pnl){
+        changePanels(pnl_ManagerProcedure_SubMenu,pnl);
+    }
+    
+    private void PROCEDURE_mostrarInformacion(){
+        String sql="SELECT PROCNAME,PROCEDURE_ID,CREATE_TIME,PROCSCHEMA,DBINFO,PARM_STYLE,NULLCALL,RESULT_SETS,LANGUAGE,IMPLEMENTATION FROM SYSCAT.PROCEDURES WHERE PROCSCHEMA = '"+SCHEMA+"' AND PROCNAME ='"+PROCEDURE_listProcedimientos.getSelectedValue().toString()+"'";
+        cargarInfoTable(sql,PROCEDURE_tableProcedure);
+    }
+    
+    private void PROCEDURE_eliminarProcedure(){
+        String sql="DROP PROCEDURE "+PROCEDURE_listProcedimientos.getSelectedValue();
+        try {
+            database.ejecutarOperacion(sql);
+            cargarProcedimientos();
+            JOptionPane.showMessageDialog(null, "Procedimiento eliminado con exito");
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Error no la operacion no se realizo con exito","Eliminar Procedimiento",JOptionPane.ERROR_MESSAGE);
+            Logger.getLogger(JF_PrincipalPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void PROCEDURE_UpdateProcedure(){
+        String sql=PROCEDURE_txtArea_EditProcedure.getText();
+        try {
+            database.ejecutarOperacion(sql);
+            JOptionPane.showMessageDialog(null, "Procedimiento actualizado exitosamente");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Error no la operacion no se realizo con exito","Actualizar Procedimiento",JOptionPane.ERROR_MESSAGE);
+            Logger.getLogger(JF_PrincipalPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+   
+    
+    private void changePanels(JPanel parent,JPanel soon){
+        parent.removeAll();
+        parent.add(soon);
+        parent.repaint();
+        parent.revalidate();
+    }
+    
+    private void PROCEDURE_addParamentro(){
+        String name,type,mode;
+        try{
+            name=PROCEDURE_txtNameParametro.getText();
+            type=PROCEDURE_cmbDataType.getSelectedItem().toString();
+            mode=PROCEDURE_cmbModo.getSelectedItem().toString();
+
+            if(!PROCEDURE_existeParametro(name, jTable4)){
+                PROCEDURE_addParametroToTable(name,mode, type,jTable4);
+            }else{
+                JOptionPane.showMessageDialog(null, "Ya existe uma columna con el mismo nombre");
+            } 
+        }catch(NullPointerException e){
+            JOptionPane.showMessageDialog(null,"Existe datos vacios, porfavor ingrese los datos","",JOptionPane.WARNING_MESSAGE);
+        }
+    }
+        private boolean PROCEDURE_existeParametro(String name,JTable table){
+            TableModel modelo=table.getModel();
+            int fila=modelo.getRowCount();
+            for (int i = 0; i < fila; i++) {
+                if(modelo.getValueAt(i,0).toString().equalsIgnoreCase(name)){
+                    return true;
+                }
+            }
+            return false; 
+        }
+
+    private void PROCEDURE_addParametroToTable(String name, String mode, String type, JTable table) {
+        DefaultTableModel modelo=(DefaultTableModel)table.getModel();   
+        int cantColumnas=table.getColumnCount();
+        modelo.addRow(new Object[]{name,mode,type});
+        table.setModel(modelo);    
+    }
+    
+    private String[][] getDataTable(JTable table){
+        DefaultTableModel modelo=(DefaultTableModel)table.getModel();
+        int colum=table.getColumnCount();
+        int row=table.getRowCount();
+        String data[][]=new String[row][colum];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < colum; j++) {
+                data[i][j]=modelo.getValueAt(i,j).toString();
+               
+            }
+           
+        }
+        return data;
+    
+    }
+
+    private void PROCEDURE_Create_prepareData() {
+        Tabla table=new Tabla();
+        String schem,nameProcedure;
+        schem=PROCEDURE_Create_cmbSchema.getSelectedItem().toString();
+        nameProcedure=PROCEDURE_Create_txtNameProcedure.getText();
+        String script=table.getCreateProcedure(schem, nameProcedure,getDataTable(jTable4));
+        PROCEDURE_Create_txtADDL.setText(script);
+    }
+    
+    
 }
             
             

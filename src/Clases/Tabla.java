@@ -28,6 +28,11 @@ public class Tabla {
         this.schema = schema;
         this.campos = campos;
     }
+
+    public Tabla() {
+    }
+    
+    
   
   
   
@@ -110,6 +115,10 @@ public class Tabla {
         return "DROP TABLE "+'"'+schema+'"'+"."+name;
     }
     
+    public String getCreateProcedure(String schem,String name,String parametros[][]){
+        return "CREATE OR REPLACE PROCEDURE \""+schem+"\"."+name+" ( "+getParametros(parametros)+" )\nBEGIN\n\nEND";
+    }
+    
     public String getScriptCreateAlterTable(){
         return "CREATE OR REPLACE TABLE "+getColumnas();
     }
@@ -167,14 +176,32 @@ public class Tabla {
     tabla.addColumna(ed);
     ArrayList<String>events=new ArrayList<>();
     String event[]={"INSERT","DELETE","UPDATE"};
+    String para[][]={{"num","OUT","VARCHAR"},{"num3","IN","VARCHAR"},{"num4","INOUT","VARCHAR"}};
+      
     
    // tabla.addPrimaryKeyToTable("NOMBRE");
     System.out.println(tabla.getScriptCreateTable());
       System.out.println(tabla.getScriptEliminarTabla());
       System.out.println(tabla.getTriggerEvent(event));
       
+      
+      
       System.out.println(tabla.generateTrigger("ANDY ESCOBAR","NERY", "TRG_NERY",event,"AFTER"));
+      
+      System.out.println(tabla.getCreateProcedure("ANDY ESCOBAR","PROCEXAMPLE", para));
   }
+
+    private String getParametros(String[][] parametros) {
+        String script="";
+        for (int i = 0; i < parametros.length; i++) {
+            script+=parametros[i][1]+" "+parametros[i][0]+" "+parametros[i][2];
+            if(i!=parametros.length-1){
+                script+=",\n ";
+            }
+        }
+            
+        return script;
+    }
 
    
 }
