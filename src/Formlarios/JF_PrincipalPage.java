@@ -91,6 +91,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
         pnl_ManagerSubPanel = new javax.swing.JPanel();
         pnl_ManagerTable = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -439,6 +440,12 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         jTextArea2 = new javax.swing.JTextArea();
         Database_btnShow1 = new javax.swing.JButton();
         Database_btnShow2 = new javax.swing.JButton();
+        pnlRUNSQL = new javax.swing.JPanel();
+        jScrollPane40 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
+        jScrollPane41 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
+        jButton9 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -569,6 +576,16 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
             }
         });
 
+        jLabel45.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel45.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel45.setText("RUN SQL");
+        jLabel45.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel45MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelLateralLayout = new javax.swing.GroupLayout(panelLateral);
         panelLateral.setLayout(panelLateralLayout);
         panelLateralLayout.setHorizontalGroup(
@@ -581,6 +598,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
             .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel42, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+            .addComponent(jLabel45, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelLateralLayout.setVerticalGroup(
             panelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -601,7 +619,9 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pnl_ManagerSubPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -999,7 +1019,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
             pnlTableSQLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlTableSQLLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -4532,6 +4552,68 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
 
         pnl_ManagerSubPanel.add(pnl_ManagerDatabase, "card4");
 
+        pnlRUNSQL.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTable5.setBackground(new java.awt.Color(255, 255, 255));
+        jTable5.setForeground(new java.awt.Color(102, 102, 102));
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane40.setViewportView(jTable5);
+
+        jScrollPane41.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTextArea3.setBackground(new java.awt.Color(255, 255, 255));
+        jTextArea3.setColumns(20);
+        jTextArea3.setForeground(new java.awt.Color(102, 102, 102));
+        jTextArea3.setRows(5);
+        jScrollPane41.setViewportView(jTextArea3);
+
+        jButton9.setBackground(new java.awt.Color(255, 255, 255));
+        jButton9.setText("EJECUTAR");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlRUNSQLLayout = new javax.swing.GroupLayout(pnlRUNSQL);
+        pnlRUNSQL.setLayout(pnlRUNSQLLayout);
+        pnlRUNSQLLayout.setHorizontalGroup(
+            pnlRUNSQLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlRUNSQLLayout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addGroup(pnlRUNSQLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane41)
+                    .addComponent(jScrollPane40, javax.swing.GroupLayout.DEFAULT_SIZE, 782, Short.MAX_VALUE))
+                .addContainerGap(132, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRUNSQLLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton9)
+                .addGap(141, 141, 141))
+        );
+        pnlRUNSQLLayout.setVerticalGroup(
+            pnlRUNSQLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRUNSQLLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane41, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addComponent(jScrollPane40, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(96, 96, 96))
+        );
+
+        pnl_ManagerSubPanel.add(pnlRUNSQL, "card17");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -4562,7 +4644,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 691, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 691, Short.MAX_VALUE)
         );
 
         pack();
@@ -5230,6 +5312,15 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         DataBase_cargar();
     }//GEN-LAST:event_jButton8ActionPerformed
 
+    private void jLabel45MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel45MouseClicked
+      selectBotonColor(jLabel45); 
+        cambiarParentContainer(pnlRUNSQL);
+    }//GEN-LAST:event_jLabel45MouseClicked
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        cargarDatosTabla(jTextArea3.getText(), jTable5);
+    }//GEN-LAST:event_jButton9ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -5432,6 +5523,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -5472,6 +5564,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
@@ -5531,6 +5624,8 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane38;
     private javax.swing.JScrollPane jScrollPane39;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane40;
+    private javax.swing.JScrollPane jScrollPane41;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
@@ -5556,8 +5651,10 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTable5;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
     private javax.swing.JLabel lblSchema;
     private javax.swing.JList<String> listTable;
     private javax.swing.JPanel pEncabezado;
@@ -5579,6 +5676,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JPanel pnlIndexesSQL1;
     private javax.swing.JPanel pnlProcedureMain;
     private javax.swing.JPanel pnlProcedureSQL;
+    private javax.swing.JPanel pnlRUNSQL;
     private javax.swing.JPanel pnlShowCheck;
     private javax.swing.JPanel pnlShowIndexes;
     private javax.swing.JPanel pnlShowIndexes1;
@@ -5649,6 +5747,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         jLabel7.setBackground(color);
        jLabel41.setBackground(color);
         jLabel42.setBackground(color);
+        jLabel45.setBackground(color);
     }
     private void selectBotonColor(JLabel lbl){
         lbl.setOpaque(true);
@@ -5734,6 +5833,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
             rs.close();
             
         } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "ERROR AL EJECUTAR CONSULTA","RUN SQL", JOptionPane.ERROR_MESSAGE);
             ex.printStackTrace();
         }
     }
