@@ -460,6 +460,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         lblSchema.setText("SCHEMA NAME");
 
         jLabel44.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(255, 255, 255));
         jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel44.setText("jLabel44");
 

@@ -265,20 +265,20 @@ public class JF_LOGIN extends javax.swing.JFrame {
 
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-        // TODO add your handling code here:
-        //put your sql/your statements here to check for password and email if correct
-        //then
-        //also validate -
+         String user=txt_email.getText();
+         String password=txt_pwd.toString();
+         String database=txt_email1.getText();
         loader.setVisible(true);
         login.setVisible(false);
         
         // lets add timeout
         
+        
         new java.util.Timer().schedule(new TimerTask() {
             @Override
             public void run() {
-                //after validating let's show the main Jframe
-               JF_PrincipalPage m = new JF_PrincipalPage("Sample","ANDY ESCOBAR","andyescobar007");
+                
+               JF_PrincipalPage m = new JF_PrincipalPage(database,user,password);
                m.setExtendedState(MAXIMIZED_BOTH);
                m.setVisible(true);
               // after successfull loggin let's close the login window
