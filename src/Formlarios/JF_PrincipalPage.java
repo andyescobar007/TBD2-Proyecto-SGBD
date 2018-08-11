@@ -5,6 +5,7 @@ import Clases.Columna;
 import Clases.Database;
 import Clases.Tabla;
 import java.awt.Color;
+import java.awt.Event;
 import java.awt.event.ItemEvent;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -56,6 +57,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         SCHEMA=User;
         
         initComponents();
+        jLabel44.setText(nameDatabase);
         lblSchema.setText(SCHEMA);
         this.setLocationRelativeTo(null);
         array_columnas=new ArrayList<>();
@@ -79,6 +81,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         pEncabezado = new javax.swing.JPanel();
         lblSchema = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
         panelLateral = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -86,6 +89,8 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
         pnl_ManagerSubPanel = new javax.swing.JPanel();
         pnl_ManagerTable = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -283,7 +288,8 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         PROCEDURE_Create_txtADDL = new javax.swing.JTextArea();
         PROCEDURE_Create_btnCancelar = new javax.swing.JButton();
         PROCEDURE_Create_btnAgregarProcedure = new javax.swing.JButton();
-        TRIGGERS_btn_pnlAtras1 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        PROCEDURE_btn_pnlAtras = new javax.swing.JButton();
         jLabel33 = new javax.swing.JLabel();
         pnl_ManagerProcedure = new javax.swing.JPanel();
         jScrollPane17 = new javax.swing.JScrollPane();
@@ -308,6 +314,131 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         pnlProcedureSQL = new javax.swing.JPanel();
         jScrollPane22 = new javax.swing.JScrollPane();
         txtArea_ProcedureSQL = new javax.swing.JTextArea();
+        pnl_ManagerChecks = new javax.swing.JPanel();
+        jScrollPane24 = new javax.swing.JScrollPane();
+        CHECK_listCheck = new javax.swing.JList<>();
+        jSeparator9 = new javax.swing.JSeparator();
+        CHECK_btnCreateCHECK = new javax.swing.JButton();
+        jSeparator10 = new javax.swing.JSeparator();
+        CHECK_btnShowChecks = new javax.swing.JButton();
+        CHECK_btnCheckSQL = new javax.swing.JButton();
+        CHECK_btnDeleteCheck = new javax.swing.JButton();
+        CHECK_btnEditCheck = new javax.swing.JButton();
+        pnl_ManagerCheck_SubMenu = new javax.swing.JPanel();
+        pnlCheckMain = new javax.swing.JPanel();
+        iconMainCheck = new javax.swing.JLabel();
+        pnlEditCheck = new javax.swing.JPanel();
+        jScrollPane25 = new javax.swing.JScrollPane();
+        CHECK_txtArea_EditCheck = new javax.swing.JTextArea();
+        CHECK_btnCheck = new javax.swing.JButton();
+        pnlShowCheck = new javax.swing.JPanel();
+        jScrollPane26 = new javax.swing.JScrollPane();
+        CHECK_tableInfoCheck = new javax.swing.JTable();
+        pnlChekSQL = new javax.swing.JPanel();
+        jScrollPane27 = new javax.swing.JScrollPane();
+        Check_txtArea_CheckSQL = new javax.swing.JTextArea();
+        CHECK_pnlCreateCheck = new javax.swing.JPanel();
+        CHECK_Create_pnlCONTENTCheck = new javax.swing.JPanel();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        CHECK_Create_txtNameCheck = new javax.swing.JTextField();
+        CHECK_Create_cmbShowSchema = new javax.swing.JComboBox<>();
+        jLabel37 = new javax.swing.JLabel();
+        CHECK_Create_cmbShowTable = new javax.swing.JComboBox<>();
+        CHECK_Create_pnlSubMenu = new javax.swing.JPanel();
+        jScrollPane28 = new javax.swing.JScrollPane();
+        CHECK_Create_txtAstateman = new javax.swing.JTextArea();
+        CHECK_Create_txtCodition = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        CHECK_btn_pnlAtras = new javax.swing.JButton();
+        jLabel39 = new javax.swing.JLabel();
+        CHECK_Create_btnCancelar = new javax.swing.JButton();
+        CHECK_Create_btnAgregar = new javax.swing.JButton();
+        pnl_ManagerIndexes = new javax.swing.JPanel();
+        jScrollPane29 = new javax.swing.JScrollPane();
+        INDEXES_listIndexes = new javax.swing.JList<>();
+        jSeparator11 = new javax.swing.JSeparator();
+        CHECK_btnCreateCHECK1 = new javax.swing.JButton();
+        jSeparator12 = new javax.swing.JSeparator();
+        INDEXES_btnShowIndexes = new javax.swing.JButton();
+        INDEXES_btnIndexesSQL = new javax.swing.JButton();
+        Indexes_btnDeleteIndexes = new javax.swing.JButton();
+        INDEXES_btnEditIndex = new javax.swing.JButton();
+        pnl_ManagerIndexes_SubMenu = new javax.swing.JPanel();
+        pnlIndexesMain = new javax.swing.JPanel();
+        iconMainCheck1 = new javax.swing.JLabel();
+        pnlEditIndexes = new javax.swing.JPanel();
+        jScrollPane30 = new javax.swing.JScrollPane();
+        INDEXES_txtArea_EditIndex = new javax.swing.JTextArea();
+        Indexes_btnIndex = new javax.swing.JButton();
+        pnlShowIndexes = new javax.swing.JPanel();
+        jScrollPane31 = new javax.swing.JScrollPane();
+        Indexes_tableInfoIndexes = new javax.swing.JTable();
+        pnlIndexesSQL = new javax.swing.JPanel();
+        jScrollPane32 = new javax.swing.JScrollPane();
+        INDEXES_txtArea_IndexesSQL = new javax.swing.JTextArea();
+        INDEXES_pnlCreateIndex = new javax.swing.JPanel();
+        CHECK_Create_pnlCONTENTCheck1 = new javax.swing.JPanel();
+        jPanel19 = new javax.swing.JPanel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        INDEX_Create_txtNameIndex = new javax.swing.JTextField();
+        INDEX_Create_cmbShowSchema = new javax.swing.JComboBox<>();
+        jLabel49 = new javax.swing.JLabel();
+        INDEX_Create_cmbShowTable = new javax.swing.JComboBox<>();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        CHECK_Create_pnlSubMenu1 = new javax.swing.JPanel();
+        jScrollPane35 = new javax.swing.JScrollPane();
+        INDEX_Create_txtAstateman = new javax.swing.JTextArea();
+        INDEX_Create_txtCodition = new javax.swing.JTextField();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        INDEX_btn_pnlAtras1 = new javax.swing.JButton();
+        jLabel52 = new javax.swing.JLabel();
+        CHECK_Create_btnCancelar1 = new javax.swing.JButton();
+        CHECK_Create_btnAgregar1 = new javax.swing.JButton();
+        pnl_ManagerFunctions = new javax.swing.JPanel();
+        jScrollPane33 = new javax.swing.JScrollPane();
+        FUNCTIONS_listFunctions = new javax.swing.JList<>();
+        jSeparator13 = new javax.swing.JSeparator();
+        CHECK_btnCreateCHECK2 = new javax.swing.JButton();
+        jSeparator14 = new javax.swing.JSeparator();
+        INDEXES_btnShowIndexes1 = new javax.swing.JButton();
+        INDEXES_btnIndexesSQL1 = new javax.swing.JButton();
+        Indexes_btnDeleteIndexes1 = new javax.swing.JButton();
+        INDEXES_btnEditIndex1 = new javax.swing.JButton();
+        pnl_ManagerIndexes_SubMenu1 = new javax.swing.JPanel();
+        pnlIndexesMain1 = new javax.swing.JPanel();
+        iconMainCheck2 = new javax.swing.JLabel();
+        pnlEditIndexes1 = new javax.swing.JPanel();
+        jScrollPane34 = new javax.swing.JScrollPane();
+        INDEXES_txtArea_EditIndex1 = new javax.swing.JTextArea();
+        Indexes_btnIndex1 = new javax.swing.JButton();
+        pnlShowIndexes1 = new javax.swing.JPanel();
+        jScrollPane36 = new javax.swing.JScrollPane();
+        Indexes_tableInfoIndexes1 = new javax.swing.JTable();
+        pnlIndexesSQL1 = new javax.swing.JPanel();
+        jScrollPane37 = new javax.swing.JScrollPane();
+        INDEXES_txtArea_IndexesSQL1 = new javax.swing.JTextArea();
+        pnl_ManagerDatabase = new javax.swing.JPanel();
+        jScrollPane38 = new javax.swing.JScrollPane();
+        Database_listDatabase = new javax.swing.JList<>();
+        jSeparator15 = new javax.swing.JSeparator();
+        jSeparator16 = new javax.swing.JSeparator();
+        Database_btnShow = new javax.swing.JButton();
+        pnl_ManagerDatabase_SubMenu1 = new javax.swing.JPanel();
+        pnlDatabeseMain = new javax.swing.JPanel();
+        iconMainTrigger1 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        Database_TextName = new javax.swing.JTextField();
+        jButton8 = new javax.swing.JButton();
+        pnlDatabeseDDL = new javax.swing.JPanel();
+        jScrollPane39 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        Database_btnShow1 = new javax.swing.JButton();
+        Database_btnShow2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -328,21 +459,31 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         lblSchema.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblSchema.setText("SCHEMA NAME");
 
+        jLabel44.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel44.setText("jLabel44");
+
         javax.swing.GroupLayout pEncabezadoLayout = new javax.swing.GroupLayout(pEncabezado);
         pEncabezado.setLayout(pEncabezadoLayout);
         pEncabezadoLayout.setHorizontalGroup(
             pEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pEncabezadoLayout.createSequentialGroup()
-                .addGap(54, 54, 54)
+                .addGap(45, 45, 45)
                 .addComponent(lblSchema)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pEncabezadoLayout.createSequentialGroup()
+                .addContainerGap(958, Short.MAX_VALUE)
+                .addComponent(jLabel44)
+                .addGap(268, 268, 268))
         );
         pEncabezadoLayout.setVerticalGroup(
             pEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pEncabezadoLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(32, 32, 32)
                 .addComponent(lblSchema)
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addGap(39, 39, 39)
+                .addComponent(jLabel44)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         panelLateral.setBackground(new java.awt.Color(85, 77, 73));
@@ -350,7 +491,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("VISTAS Y CHECKS");
+        jLabel2.setText("INDICES");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
@@ -400,10 +541,30 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("USUARIOS Y BASE DE DATOS");
+        jLabel7.setText("CHECKS");
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel7MouseClicked(evt);
+            }
+        });
+
+        jLabel41.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel41.setText("FUNCIONES");
+        jLabel41.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel41MouseClicked(evt);
+            }
+        });
+
+        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel42.setText("CREAR BASE DE DATOS");
+        jLabel42.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel42MouseClicked(evt);
             }
         });
 
@@ -411,32 +572,35 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         panelLateral.setLayout(panelLateralLayout);
         panelLateralLayout.setHorizontalGroup(
             panelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelLateralLayout.createSequentialGroup()
-                .addGroup(panelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel41, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel42, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
         );
         panelLateralLayout.setVerticalGroup(
             panelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelLateralLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         pnl_ManagerSubPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -2581,41 +2745,52 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
             }
         });
 
+        jButton7.setBackground(new java.awt.Color(255, 255, 255));
+        jButton7.setText("Atras");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PROCEDURE_Create_TextDLLLayout = new javax.swing.GroupLayout(PROCEDURE_Create_TextDLL);
         PROCEDURE_Create_TextDLL.setLayout(PROCEDURE_Create_TextDLLLayout);
         PROCEDURE_Create_TextDLLLayout.setHorizontalGroup(
             PROCEDURE_Create_TextDLLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PROCEDURE_Create_TextDLLLayout.createSequentialGroup()
-                .addContainerGap(732, Short.MAX_VALUE)
-                .addComponent(PROCEDURE_Create_btnCancelar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(PROCEDURE_Create_btnCancelar)
+                .addGap(18, 18, 18)
                 .addComponent(PROCEDURE_Create_btnAgregarProcedure, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52))
+                .addGap(46, 46, 46))
             .addGroup(PROCEDURE_Create_TextDLLLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 906, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         PROCEDURE_Create_TextDLLLayout.setVerticalGroup(
             PROCEDURE_Create_TextDLLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PROCEDURE_Create_TextDLLLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PROCEDURE_Create_TextDLLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton7)
                     .addComponent(PROCEDURE_Create_btnCancelar)
                     .addComponent(PROCEDURE_Create_btnAgregarProcedure))
-                .addGap(70, 70, 70))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         PROCEDURE_Create_pnlSubMenu.add(PROCEDURE_Create_TextDLL, "card3");
 
-        TRIGGERS_btn_pnlAtras1.setBackground(new java.awt.Color(255, 255, 255));
-        TRIGGERS_btn_pnlAtras1.setText("Atras");
-        TRIGGERS_btn_pnlAtras1.setOpaque(false);
-        TRIGGERS_btn_pnlAtras1.addActionListener(new java.awt.event.ActionListener() {
+        PROCEDURE_btn_pnlAtras.setBackground(new java.awt.Color(255, 255, 255));
+        PROCEDURE_btn_pnlAtras.setText("Atras");
+        PROCEDURE_btn_pnlAtras.setOpaque(false);
+        PROCEDURE_btn_pnlAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TRIGGERS_btn_pnlAtras1ActionPerformed(evt);
+                PROCEDURE_btn_pnlAtrasActionPerformed(evt);
             }
         });
 
@@ -2637,7 +2812,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
                             .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(PROCEDURES_Create_pnlProcedureLayout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addComponent(TRIGGERS_btn_pnlAtras1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(PROCEDURE_btn_pnlAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(112, 112, 112)
                         .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -2648,7 +2823,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addGroup(PROCEDURES_Create_pnlProcedureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(TRIGGERS_btn_pnlAtras1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(PROCEDURE_btn_pnlAtras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46)
@@ -2934,12 +3109,1434 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
 
         pnl_ManagerSubPanel.add(pnl_ManagerProcedure, "card4");
 
+        pnl_ManagerChecks.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane24.setBackground(new java.awt.Color(255, 255, 255));
+
+        CHECK_listCheck.setBackground(new java.awt.Color(255, 255, 255));
+        CHECK_listCheck.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        CHECK_listCheck.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        CHECK_listCheck.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane24.setViewportView(CHECK_listCheck);
+
+        jSeparator9.setBackground(new java.awt.Color(0, 102, 102));
+
+        CHECK_btnCreateCHECK.setBackground(new java.awt.Color(255, 255, 255));
+        CHECK_btnCreateCHECK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/new_table-icon18px.png"))); // NOI18N
+        CHECK_btnCreateCHECK.setText("CREAR CHECK");
+        CHECK_btnCreateCHECK.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        CHECK_btnCreateCHECK.setBorderPainted(false);
+        CHECK_btnCreateCHECK.setOpaque(false);
+        CHECK_btnCreateCHECK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CHECK_btnCreateCHECKActionPerformed(evt);
+            }
+        });
+
+        jSeparator10.setBackground(new java.awt.Color(0, 102, 102));
+        jSeparator10.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        CHECK_btnShowChecks.setBackground(new java.awt.Color(255, 255, 255));
+        CHECK_btnShowChecks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/showTable-icon24px.png"))); // NOI18N
+        CHECK_btnShowChecks.setToolTipText("Mostrar Tabla");
+        CHECK_btnShowChecks.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        CHECK_btnShowChecks.setOpaque(false);
+        CHECK_btnShowChecks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CHECK_btnShowChecksActionPerformed(evt);
+            }
+        });
+
+        CHECK_btnCheckSQL.setBackground(new java.awt.Color(255, 255, 255));
+        CHECK_btnCheckSQL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/showSQL-icon24px.png"))); // NOI18N
+        CHECK_btnCheckSQL.setToolTipText("Mostrar SQL");
+        CHECK_btnCheckSQL.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        CHECK_btnCheckSQL.setOpaque(false);
+        CHECK_btnCheckSQL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CHECK_btnCheckSQLActionPerformed(evt);
+            }
+        });
+
+        CHECK_btnDeleteCheck.setBackground(new java.awt.Color(255, 255, 255));
+        CHECK_btnDeleteCheck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/trash-icon24px.png"))); // NOI18N
+        CHECK_btnDeleteCheck.setToolTipText("Eliminar Tabla");
+        CHECK_btnDeleteCheck.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        CHECK_btnDeleteCheck.setOpaque(false);
+        CHECK_btnDeleteCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CHECK_btnDeleteCheckActionPerformed(evt);
+            }
+        });
+
+        CHECK_btnEditCheck.setBackground(new java.awt.Color(255, 255, 255));
+        CHECK_btnEditCheck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/editTable-icon24px.png"))); // NOI18N
+        CHECK_btnEditCheck.setToolTipText("Editar Tabla");
+        CHECK_btnEditCheck.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        CHECK_btnEditCheck.setOpaque(false);
+        CHECK_btnEditCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CHECK_btnEditCheckActionPerformed(evt);
+            }
+        });
+
+        pnl_ManagerCheck_SubMenu.setLayout(new java.awt.CardLayout());
+
+        pnlCheckMain.setBackground(new java.awt.Color(255, 255, 255));
+
+        iconMainCheck.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        iconMainCheck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/check-icon120px.png"))); // NOI18N
+
+        javax.swing.GroupLayout pnlCheckMainLayout = new javax.swing.GroupLayout(pnlCheckMain);
+        pnlCheckMain.setLayout(pnlCheckMainLayout);
+        pnlCheckMainLayout.setHorizontalGroup(
+            pnlCheckMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCheckMainLayout.createSequentialGroup()
+                .addGap(161, 161, 161)
+                .addComponent(iconMainCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(140, Short.MAX_VALUE))
+        );
+        pnlCheckMainLayout.setVerticalGroup(
+            pnlCheckMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCheckMainLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(iconMainCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(67, Short.MAX_VALUE))
+        );
+
+        pnl_ManagerCheck_SubMenu.add(pnlCheckMain, "card2");
+
+        pnlEditCheck.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane25.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane25.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jScrollPane25.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        CHECK_txtArea_EditCheck.setColumns(5);
+        CHECK_txtArea_EditCheck.setLineWrap(true);
+        CHECK_txtArea_EditCheck.setRows(5);
+        jScrollPane25.setViewportView(CHECK_txtArea_EditCheck);
+
+        CHECK_btnCheck.setBackground(new java.awt.Color(255, 255, 255));
+        CHECK_btnCheck.setText("Actualizar");
+        CHECK_btnCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CHECK_btnCheckActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlEditCheckLayout = new javax.swing.GroupLayout(pnlEditCheck);
+        pnlEditCheck.setLayout(pnlEditCheckLayout);
+        pnlEditCheckLayout.setHorizontalGroup(
+            pnlEditCheckLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEditCheckLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(50, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEditCheckLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(CHECK_btnCheck)
+                .addGap(79, 79, 79))
+        );
+        pnlEditCheckLayout.setVerticalGroup(
+            pnlEditCheckLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEditCheckLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(CHECK_btnCheck)
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+
+        pnl_ManagerCheck_SubMenu.add(pnlEditCheck, "card3");
+
+        pnlShowCheck.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane26.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        CHECK_tableInfoCheck.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Título 1", "Título 2", "Título 3", "Título 4"
+            }
+        ));
+        jScrollPane26.setViewportView(CHECK_tableInfoCheck);
+        CHECK_tableInfoCheck.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+
+        javax.swing.GroupLayout pnlShowCheckLayout = new javax.swing.GroupLayout(pnlShowCheck);
+        pnlShowCheck.setLayout(pnlShowCheckLayout);
+        pnlShowCheckLayout.setHorizontalGroup(
+            pnlShowCheckLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlShowCheckLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane26, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        pnlShowCheckLayout.setVerticalGroup(
+            pnlShowCheckLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlShowCheckLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane26, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
+        );
+
+        pnl_ManagerCheck_SubMenu.add(pnlShowCheck, "card3");
+
+        pnlChekSQL.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane27.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane27.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        Check_txtArea_CheckSQL.setColumns(20);
+        Check_txtArea_CheckSQL.setLineWrap(true);
+        Check_txtArea_CheckSQL.setRows(5);
+        Check_txtArea_CheckSQL.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jScrollPane27.setViewportView(Check_txtArea_CheckSQL);
+
+        javax.swing.GroupLayout pnlChekSQLLayout = new javax.swing.GroupLayout(pnlChekSQL);
+        pnlChekSQL.setLayout(pnlChekSQLLayout);
+        pnlChekSQLLayout.setHorizontalGroup(
+            pnlChekSQLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlChekSQLLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane27, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        pnlChekSQLLayout.setVerticalGroup(
+            pnlChekSQLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlChekSQLLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane27, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        pnl_ManagerCheck_SubMenu.add(pnlChekSQL, "card5");
+
+        javax.swing.GroupLayout pnl_ManagerChecksLayout = new javax.swing.GroupLayout(pnl_ManagerChecks);
+        pnl_ManagerChecks.setLayout(pnl_ManagerChecksLayout);
+        pnl_ManagerChecksLayout.setHorizontalGroup(
+            pnl_ManagerChecksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator9, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(pnl_ManagerChecksLayout.createSequentialGroup()
+                .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnl_ManagerChecksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnl_ManagerChecksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(CHECK_btnShowChecks, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CHECK_btnCheckSQL, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CHECK_btnDeleteCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CHECK_btnEditCheck, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pnl_ManagerCheck_SubMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 733, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(pnl_ManagerChecksLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(CHECK_btnCreateCHECK, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnl_ManagerChecksLayout.setVerticalGroup(
+            pnl_ManagerChecksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_ManagerChecksLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(CHECK_btnCreateCHECK, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnl_ManagerChecksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnl_ManagerChecksLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(CHECK_btnShowChecks, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(CHECK_btnDeleteCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(CHECK_btnEditCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(CHECK_btnCheckSQL, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnl_ManagerChecksLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnl_ManagerChecksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pnl_ManagerCheck_SubMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(166, 166, 166))
+        );
+
+        pnl_ManagerSubPanel.add(pnl_ManagerChecks, "card4");
+
+        CHECK_Create_pnlCONTENTCheck.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel16.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel16.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos Tabla"));
+
+        jLabel31.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel31.setText("SCHEMA");
+
+        jLabel32.setText("Nombre Check");
+
+        CHECK_Create_txtNameCheck.setBackground(new java.awt.Color(255, 255, 255));
+        CHECK_Create_txtNameCheck.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        CHECK_Create_txtNameCheck.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        CHECK_Create_txtNameCheck.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                CHECK_Create_txtNameCheckKeyReleased(evt);
+            }
+        });
+
+        CHECK_Create_cmbShowSchema.setBackground(new java.awt.Color(255, 255, 255));
+        CHECK_Create_cmbShowSchema.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CHECK_Create_cmbShowSchema.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                CHECK_Create_cmbShowSchemaItemStateChanged(evt);
+            }
+        });
+
+        jLabel37.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel37.setText("Tabla");
+
+        CHECK_Create_cmbShowTable.setBackground(new java.awt.Color(255, 255, 255));
+        CHECK_Create_cmbShowTable.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CHECK_Create_cmbShowTable.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                CHECK_Create_cmbShowTableItemStateChanged(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(CHECK_Create_cmbShowSchema, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CHECK_Create_cmbShowTable, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(CHECK_Create_txtNameCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(CHECK_Create_cmbShowSchema, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(CHECK_Create_cmbShowTable, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(CHECK_Create_txtNameCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        CHECK_Create_pnlSubMenu.setBackground(new java.awt.Color(255, 255, 255));
+        CHECK_Create_pnlSubMenu.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        jScrollPane28.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane28.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        CHECK_Create_txtAstateman.setEditable(false);
+        CHECK_Create_txtAstateman.setBackground(new java.awt.Color(255, 255, 255));
+        CHECK_Create_txtAstateman.setColumns(20);
+        CHECK_Create_txtAstateman.setRows(5);
+        jScrollPane28.setViewportView(CHECK_Create_txtAstateman);
+
+        CHECK_Create_txtCodition.setBackground(new java.awt.Color(255, 255, 255));
+        CHECK_Create_txtCodition.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                CHECK_Create_txtCoditionKeyReleased(evt);
+            }
+        });
+
+        jLabel38.setText("Codiciones del Check");
+
+        jLabel40.setText("DLL");
+
+        javax.swing.GroupLayout CHECK_Create_pnlSubMenuLayout = new javax.swing.GroupLayout(CHECK_Create_pnlSubMenu);
+        CHECK_Create_pnlSubMenu.setLayout(CHECK_Create_pnlSubMenuLayout);
+        CHECK_Create_pnlSubMenuLayout.setHorizontalGroup(
+            CHECK_Create_pnlSubMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CHECK_Create_pnlSubMenuLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel38)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(CHECK_Create_pnlSubMenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(CHECK_Create_pnlSubMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CHECK_Create_pnlSubMenuLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel40)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(CHECK_Create_pnlSubMenuLayout.createSequentialGroup()
+                        .addGroup(CHECK_Create_pnlSubMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane28, javax.swing.GroupLayout.DEFAULT_SIZE, 862, Short.MAX_VALUE)
+                            .addComponent(CHECK_Create_txtCodition))
+                        .addContainerGap())))
+        );
+        CHECK_Create_pnlSubMenuLayout.setVerticalGroup(
+            CHECK_Create_pnlSubMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CHECK_Create_pnlSubMenuLayout.createSequentialGroup()
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(jLabel38)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CHECK_Create_txtCodition, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel40)
+                .addGap(5, 5, 5)
+                .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        CHECK_btn_pnlAtras.setBackground(new java.awt.Color(255, 255, 255));
+        CHECK_btn_pnlAtras.setText("Atras");
+        CHECK_btn_pnlAtras.setOpaque(false);
+        CHECK_btn_pnlAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CHECK_btn_pnlAtrasActionPerformed(evt);
+            }
+        });
+
+        jLabel39.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel39.setText("CREAR CHECK");
+
+        CHECK_Create_btnCancelar.setBackground(new java.awt.Color(255, 255, 255));
+        CHECK_Create_btnCancelar.setText("Cancelar");
+        CHECK_Create_btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CHECK_Create_btnCancelarActionPerformed(evt);
+            }
+        });
+
+        CHECK_Create_btnAgregar.setBackground(new java.awt.Color(255, 255, 255));
+        CHECK_Create_btnAgregar.setText("Crear");
+        CHECK_Create_btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CHECK_Create_btnAgregarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CHECK_Create_pnlCONTENTCheckLayout = new javax.swing.GroupLayout(CHECK_Create_pnlCONTENTCheck);
+        CHECK_Create_pnlCONTENTCheck.setLayout(CHECK_Create_pnlCONTENTCheckLayout);
+        CHECK_Create_pnlCONTENTCheckLayout.setHorizontalGroup(
+            CHECK_Create_pnlCONTENTCheckLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CHECK_Create_pnlCONTENTCheckLayout.createSequentialGroup()
+                .addGroup(CHECK_Create_pnlCONTENTCheckLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CHECK_Create_pnlCONTENTCheckLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(CHECK_Create_pnlCONTENTCheckLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CHECK_Create_pnlSubMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(CHECK_Create_pnlCONTENTCheckLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(CHECK_btn_pnlAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(112, 112, 112)
+                        .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(50, 56, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CHECK_Create_pnlCONTENTCheckLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(CHECK_Create_btnCancelar)
+                .addGap(26, 26, 26)
+                .addComponent(CHECK_Create_btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65))
+        );
+        CHECK_Create_pnlCONTENTCheckLayout.setVerticalGroup(
+            CHECK_Create_pnlCONTENTCheckLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CHECK_Create_pnlCONTENTCheckLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(CHECK_Create_pnlCONTENTCheckLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(CHECK_btn_pnlAtras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addComponent(CHECK_Create_pnlSubMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(CHECK_Create_pnlCONTENTCheckLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CHECK_Create_btnCancelar)
+                    .addComponent(CHECK_Create_btnAgregar))
+                .addContainerGap(115, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout CHECK_pnlCreateCheckLayout = new javax.swing.GroupLayout(CHECK_pnlCreateCheck);
+        CHECK_pnlCreateCheck.setLayout(CHECK_pnlCreateCheckLayout);
+        CHECK_pnlCreateCheckLayout.setHorizontalGroup(
+            CHECK_pnlCreateCheckLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 983, Short.MAX_VALUE)
+            .addGroup(CHECK_pnlCreateCheckLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(CHECK_Create_pnlCONTENTCheck, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        CHECK_pnlCreateCheckLayout.setVerticalGroup(
+            CHECK_pnlCreateCheckLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 572, Short.MAX_VALUE)
+            .addGroup(CHECK_pnlCreateCheckLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(CHECK_Create_pnlCONTENTCheck, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pnl_ManagerSubPanel.add(CHECK_pnlCreateCheck, "card3");
+
+        pnl_ManagerIndexes.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane29.setBackground(new java.awt.Color(255, 255, 255));
+
+        INDEXES_listIndexes.setBackground(new java.awt.Color(255, 255, 255));
+        INDEXES_listIndexes.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        INDEXES_listIndexes.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        INDEXES_listIndexes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane29.setViewportView(INDEXES_listIndexes);
+
+        jSeparator11.setBackground(new java.awt.Color(0, 102, 102));
+
+        CHECK_btnCreateCHECK1.setBackground(new java.awt.Color(255, 255, 255));
+        CHECK_btnCreateCHECK1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/new_table-icon18px.png"))); // NOI18N
+        CHECK_btnCreateCHECK1.setText("CREAR INDICE");
+        CHECK_btnCreateCHECK1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        CHECK_btnCreateCHECK1.setBorderPainted(false);
+        CHECK_btnCreateCHECK1.setOpaque(false);
+        CHECK_btnCreateCHECK1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CHECK_btnCreateCHECK1ActionPerformed(evt);
+            }
+        });
+
+        jSeparator12.setBackground(new java.awt.Color(0, 102, 102));
+        jSeparator12.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        INDEXES_btnShowIndexes.setBackground(new java.awt.Color(255, 255, 255));
+        INDEXES_btnShowIndexes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/showTable-icon24px.png"))); // NOI18N
+        INDEXES_btnShowIndexes.setToolTipText("Mostrar Tabla");
+        INDEXES_btnShowIndexes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        INDEXES_btnShowIndexes.setOpaque(false);
+        INDEXES_btnShowIndexes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                INDEXES_btnShowIndexesActionPerformed(evt);
+            }
+        });
+
+        INDEXES_btnIndexesSQL.setBackground(new java.awt.Color(255, 255, 255));
+        INDEXES_btnIndexesSQL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/showSQL-icon24px.png"))); // NOI18N
+        INDEXES_btnIndexesSQL.setToolTipText("Mostrar SQL");
+        INDEXES_btnIndexesSQL.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        INDEXES_btnIndexesSQL.setOpaque(false);
+        INDEXES_btnIndexesSQL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                INDEXES_btnIndexesSQLActionPerformed(evt);
+            }
+        });
+
+        Indexes_btnDeleteIndexes.setBackground(new java.awt.Color(255, 255, 255));
+        Indexes_btnDeleteIndexes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/trash-icon24px.png"))); // NOI18N
+        Indexes_btnDeleteIndexes.setToolTipText("Eliminar Tabla");
+        Indexes_btnDeleteIndexes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Indexes_btnDeleteIndexes.setOpaque(false);
+        Indexes_btnDeleteIndexes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Indexes_btnDeleteIndexesActionPerformed(evt);
+            }
+        });
+
+        INDEXES_btnEditIndex.setBackground(new java.awt.Color(255, 255, 255));
+        INDEXES_btnEditIndex.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/editTable-icon24px.png"))); // NOI18N
+        INDEXES_btnEditIndex.setToolTipText("Editar Tabla");
+        INDEXES_btnEditIndex.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        INDEXES_btnEditIndex.setOpaque(false);
+        INDEXES_btnEditIndex.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                INDEXES_btnEditIndexActionPerformed(evt);
+            }
+        });
+
+        pnl_ManagerIndexes_SubMenu.setLayout(new java.awt.CardLayout());
+
+        pnlIndexesMain.setBackground(new java.awt.Color(255, 255, 255));
+
+        iconMainCheck1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        iconMainCheck1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/check-icon120px.png"))); // NOI18N
+
+        javax.swing.GroupLayout pnlIndexesMainLayout = new javax.swing.GroupLayout(pnlIndexesMain);
+        pnlIndexesMain.setLayout(pnlIndexesMainLayout);
+        pnlIndexesMainLayout.setHorizontalGroup(
+            pnlIndexesMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlIndexesMainLayout.createSequentialGroup()
+                .addGap(161, 161, 161)
+                .addComponent(iconMainCheck1, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(140, Short.MAX_VALUE))
+        );
+        pnlIndexesMainLayout.setVerticalGroup(
+            pnlIndexesMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlIndexesMainLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(iconMainCheck1, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(67, Short.MAX_VALUE))
+        );
+
+        pnl_ManagerIndexes_SubMenu.add(pnlIndexesMain, "card2");
+
+        pnlEditIndexes.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane30.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane30.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jScrollPane30.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        INDEXES_txtArea_EditIndex.setColumns(5);
+        INDEXES_txtArea_EditIndex.setLineWrap(true);
+        INDEXES_txtArea_EditIndex.setRows(5);
+        jScrollPane30.setViewportView(INDEXES_txtArea_EditIndex);
+
+        Indexes_btnIndex.setBackground(new java.awt.Color(255, 255, 255));
+        Indexes_btnIndex.setText("Actualizar");
+        Indexes_btnIndex.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Indexes_btnIndexActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlEditIndexesLayout = new javax.swing.GroupLayout(pnlEditIndexes);
+        pnlEditIndexes.setLayout(pnlEditIndexesLayout);
+        pnlEditIndexesLayout.setHorizontalGroup(
+            pnlEditIndexesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEditIndexesLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(50, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEditIndexesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Indexes_btnIndex)
+                .addGap(70, 70, 70))
+        );
+        pnlEditIndexesLayout.setVerticalGroup(
+            pnlEditIndexesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEditIndexesLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Indexes_btnIndex)
+                .addContainerGap(83, Short.MAX_VALUE))
+        );
+
+        pnl_ManagerIndexes_SubMenu.add(pnlEditIndexes, "card3");
+
+        pnlShowIndexes.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane31.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        Indexes_tableInfoIndexes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Título 1", "Título 2", "Título 3", "Título 4"
+            }
+        ));
+        jScrollPane31.setViewportView(Indexes_tableInfoIndexes);
+        Indexes_tableInfoIndexes.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+
+        javax.swing.GroupLayout pnlShowIndexesLayout = new javax.swing.GroupLayout(pnlShowIndexes);
+        pnlShowIndexes.setLayout(pnlShowIndexesLayout);
+        pnlShowIndexesLayout.setHorizontalGroup(
+            pnlShowIndexesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlShowIndexesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane31, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        pnlShowIndexesLayout.setVerticalGroup(
+            pnlShowIndexesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlShowIndexesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
+        );
+
+        pnl_ManagerIndexes_SubMenu.add(pnlShowIndexes, "card3");
+
+        pnlIndexesSQL.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane32.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane32.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        INDEXES_txtArea_IndexesSQL.setColumns(20);
+        INDEXES_txtArea_IndexesSQL.setLineWrap(true);
+        INDEXES_txtArea_IndexesSQL.setRows(5);
+        INDEXES_txtArea_IndexesSQL.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jScrollPane32.setViewportView(INDEXES_txtArea_IndexesSQL);
+
+        javax.swing.GroupLayout pnlIndexesSQLLayout = new javax.swing.GroupLayout(pnlIndexesSQL);
+        pnlIndexesSQL.setLayout(pnlIndexesSQLLayout);
+        pnlIndexesSQLLayout.setHorizontalGroup(
+            pnlIndexesSQLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlIndexesSQLLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane32, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        pnlIndexesSQLLayout.setVerticalGroup(
+            pnlIndexesSQLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlIndexesSQLLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane32, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        pnl_ManagerIndexes_SubMenu.add(pnlIndexesSQL, "card5");
+
+        javax.swing.GroupLayout pnl_ManagerIndexesLayout = new javax.swing.GroupLayout(pnl_ManagerIndexes);
+        pnl_ManagerIndexes.setLayout(pnl_ManagerIndexesLayout);
+        pnl_ManagerIndexesLayout.setHorizontalGroup(
+            pnl_ManagerIndexesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator11, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(pnl_ManagerIndexesLayout.createSequentialGroup()
+                .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnl_ManagerIndexesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnl_ManagerIndexesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(INDEXES_btnShowIndexes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(INDEXES_btnIndexesSQL, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Indexes_btnDeleteIndexes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(INDEXES_btnEditIndex, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pnl_ManagerIndexes_SubMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 733, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(pnl_ManagerIndexesLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(CHECK_btnCreateCHECK1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnl_ManagerIndexesLayout.setVerticalGroup(
+            pnl_ManagerIndexesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_ManagerIndexesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(CHECK_btnCreateCHECK1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnl_ManagerIndexesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnl_ManagerIndexesLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(INDEXES_btnShowIndexes, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Indexes_btnDeleteIndexes, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(INDEXES_btnEditIndex, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(INDEXES_btnIndexesSQL, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnl_ManagerIndexesLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnl_ManagerIndexesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pnl_ManagerIndexes_SubMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(166, 166, 166))
+        );
+
+        pnl_ManagerSubPanel.add(pnl_ManagerIndexes, "card4");
+
+        CHECK_Create_pnlCONTENTCheck1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel19.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel19.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos Tabla"));
+
+        jLabel47.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel47.setText("SCHEMA");
+
+        jLabel48.setText("Nombre Index");
+
+        INDEX_Create_txtNameIndex.setBackground(new java.awt.Color(255, 255, 255));
+        INDEX_Create_txtNameIndex.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        INDEX_Create_txtNameIndex.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        INDEX_Create_txtNameIndex.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                INDEX_Create_txtNameIndexKeyReleased(evt);
+            }
+        });
+
+        INDEX_Create_cmbShowSchema.setBackground(new java.awt.Color(255, 255, 255));
+        INDEX_Create_cmbShowSchema.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        INDEX_Create_cmbShowSchema.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                INDEX_Create_cmbShowSchemaItemStateChanged(evt);
+            }
+        });
+
+        jLabel49.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel49.setText("Tabla");
+
+        INDEX_Create_cmbShowTable.setBackground(new java.awt.Color(255, 255, 255));
+        INDEX_Create_cmbShowTable.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        INDEX_Create_cmbShowTable.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                INDEX_Create_cmbShowTableItemStateChanged(evt);
+            }
+        });
+
+        jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBox1.setText("UNIQUE");
+        jCheckBox1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jCheckBox1ItemStateChanged(evt);
+            }
+        });
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(INDEX_Create_cmbShowSchema, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(INDEX_Create_cmbShowTable, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(INDEX_Create_txtNameIndex, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jCheckBox1)
+                .addContainerGap(52, Short.MAX_VALUE))
+        );
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel47, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(INDEX_Create_cmbShowSchema, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(INDEX_Create_cmbShowTable, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel48, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(INDEX_Create_txtNameIndex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBox1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        CHECK_Create_pnlSubMenu1.setBackground(new java.awt.Color(255, 255, 255));
+        CHECK_Create_pnlSubMenu1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        jScrollPane35.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane35.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        INDEX_Create_txtAstateman.setBackground(new java.awt.Color(255, 255, 255));
+        INDEX_Create_txtAstateman.setColumns(20);
+        INDEX_Create_txtAstateman.setRows(5);
+        jScrollPane35.setViewportView(INDEX_Create_txtAstateman);
+
+        INDEX_Create_txtCodition.setBackground(new java.awt.Color(255, 255, 255));
+        INDEX_Create_txtCodition.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                INDEX_Create_txtCoditionKeyReleased(evt);
+            }
+        });
+
+        jLabel50.setText("AGREGAR COLUMNA");
+
+        jLabel51.setText("DLL");
+
+        javax.swing.GroupLayout CHECK_Create_pnlSubMenu1Layout = new javax.swing.GroupLayout(CHECK_Create_pnlSubMenu1);
+        CHECK_Create_pnlSubMenu1.setLayout(CHECK_Create_pnlSubMenu1Layout);
+        CHECK_Create_pnlSubMenu1Layout.setHorizontalGroup(
+            CHECK_Create_pnlSubMenu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CHECK_Create_pnlSubMenu1Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel50)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(CHECK_Create_pnlSubMenu1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(CHECK_Create_pnlSubMenu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CHECK_Create_pnlSubMenu1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel51)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(CHECK_Create_pnlSubMenu1Layout.createSequentialGroup()
+                        .addGroup(CHECK_Create_pnlSubMenu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane35, javax.swing.GroupLayout.DEFAULT_SIZE, 862, Short.MAX_VALUE)
+                            .addComponent(INDEX_Create_txtCodition))
+                        .addContainerGap())))
+        );
+        CHECK_Create_pnlSubMenu1Layout.setVerticalGroup(
+            CHECK_Create_pnlSubMenu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CHECK_Create_pnlSubMenu1Layout.createSequentialGroup()
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(jLabel50)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(INDEX_Create_txtCodition, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel51)
+                .addGap(5, 5, 5)
+                .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        INDEX_btn_pnlAtras1.setBackground(new java.awt.Color(255, 255, 255));
+        INDEX_btn_pnlAtras1.setText("Atras");
+        INDEX_btn_pnlAtras1.setOpaque(false);
+        INDEX_btn_pnlAtras1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                INDEX_btn_pnlAtras1ActionPerformed(evt);
+            }
+        });
+
+        jLabel52.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel52.setText("CREAR INDEX");
+
+        CHECK_Create_btnCancelar1.setBackground(new java.awt.Color(255, 255, 255));
+        CHECK_Create_btnCancelar1.setText("Cancelar");
+        CHECK_Create_btnCancelar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CHECK_Create_btnCancelar1ActionPerformed(evt);
+            }
+        });
+
+        CHECK_Create_btnAgregar1.setBackground(new java.awt.Color(255, 255, 255));
+        CHECK_Create_btnAgregar1.setText("Crear");
+        CHECK_Create_btnAgregar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CHECK_Create_btnAgregar1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CHECK_Create_pnlCONTENTCheck1Layout = new javax.swing.GroupLayout(CHECK_Create_pnlCONTENTCheck1);
+        CHECK_Create_pnlCONTENTCheck1.setLayout(CHECK_Create_pnlCONTENTCheck1Layout);
+        CHECK_Create_pnlCONTENTCheck1Layout.setHorizontalGroup(
+            CHECK_Create_pnlCONTENTCheck1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CHECK_Create_pnlCONTENTCheck1Layout.createSequentialGroup()
+                .addGroup(CHECK_Create_pnlCONTENTCheck1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CHECK_Create_pnlCONTENTCheck1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(CHECK_Create_pnlCONTENTCheck1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CHECK_Create_pnlSubMenu1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(CHECK_Create_pnlCONTENTCheck1Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(INDEX_btn_pnlAtras1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(112, 112, 112)
+                        .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CHECK_Create_pnlCONTENTCheck1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(CHECK_Create_btnCancelar1)
+                .addGap(26, 26, 26)
+                .addComponent(CHECK_Create_btnAgregar1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65))
+        );
+        CHECK_Create_pnlCONTENTCheck1Layout.setVerticalGroup(
+            CHECK_Create_pnlCONTENTCheck1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CHECK_Create_pnlCONTENTCheck1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(CHECK_Create_pnlCONTENTCheck1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel52, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(INDEX_btn_pnlAtras1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addComponent(CHECK_Create_pnlSubMenu1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(CHECK_Create_pnlCONTENTCheck1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CHECK_Create_btnCancelar1)
+                    .addComponent(CHECK_Create_btnAgregar1))
+                .addContainerGap(116, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout INDEXES_pnlCreateIndexLayout = new javax.swing.GroupLayout(INDEXES_pnlCreateIndex);
+        INDEXES_pnlCreateIndex.setLayout(INDEXES_pnlCreateIndexLayout);
+        INDEXES_pnlCreateIndexLayout.setHorizontalGroup(
+            INDEXES_pnlCreateIndexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 983, Short.MAX_VALUE)
+            .addGroup(INDEXES_pnlCreateIndexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(CHECK_Create_pnlCONTENTCheck1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        INDEXES_pnlCreateIndexLayout.setVerticalGroup(
+            INDEXES_pnlCreateIndexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 572, Short.MAX_VALUE)
+            .addGroup(INDEXES_pnlCreateIndexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(CHECK_Create_pnlCONTENTCheck1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pnl_ManagerSubPanel.add(INDEXES_pnlCreateIndex, "card3");
+
+        pnl_ManagerFunctions.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane33.setBackground(new java.awt.Color(255, 255, 255));
+
+        FUNCTIONS_listFunctions.setBackground(new java.awt.Color(255, 255, 255));
+        FUNCTIONS_listFunctions.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        FUNCTIONS_listFunctions.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        FUNCTIONS_listFunctions.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane33.setViewportView(FUNCTIONS_listFunctions);
+
+        jSeparator13.setBackground(new java.awt.Color(0, 102, 102));
+
+        CHECK_btnCreateCHECK2.setBackground(new java.awt.Color(255, 255, 255));
+        CHECK_btnCreateCHECK2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/new_table-icon18px.png"))); // NOI18N
+        CHECK_btnCreateCHECK2.setText("CREAR CHECK");
+        CHECK_btnCreateCHECK2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        CHECK_btnCreateCHECK2.setBorderPainted(false);
+        CHECK_btnCreateCHECK2.setOpaque(false);
+        CHECK_btnCreateCHECK2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CHECK_btnCreateCHECK2ActionPerformed(evt);
+            }
+        });
+
+        jSeparator14.setBackground(new java.awt.Color(0, 102, 102));
+        jSeparator14.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        INDEXES_btnShowIndexes1.setBackground(new java.awt.Color(255, 255, 255));
+        INDEXES_btnShowIndexes1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/showTable-icon24px.png"))); // NOI18N
+        INDEXES_btnShowIndexes1.setToolTipText("Mostrar Tabla");
+        INDEXES_btnShowIndexes1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        INDEXES_btnShowIndexes1.setOpaque(false);
+        INDEXES_btnShowIndexes1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                INDEXES_btnShowIndexes1ActionPerformed(evt);
+            }
+        });
+
+        INDEXES_btnIndexesSQL1.setBackground(new java.awt.Color(255, 255, 255));
+        INDEXES_btnIndexesSQL1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/showSQL-icon24px.png"))); // NOI18N
+        INDEXES_btnIndexesSQL1.setToolTipText("Mostrar SQL");
+        INDEXES_btnIndexesSQL1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        INDEXES_btnIndexesSQL1.setOpaque(false);
+        INDEXES_btnIndexesSQL1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                INDEXES_btnIndexesSQL1ActionPerformed(evt);
+            }
+        });
+
+        Indexes_btnDeleteIndexes1.setBackground(new java.awt.Color(255, 255, 255));
+        Indexes_btnDeleteIndexes1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/trash-icon24px.png"))); // NOI18N
+        Indexes_btnDeleteIndexes1.setToolTipText("Eliminar Tabla");
+        Indexes_btnDeleteIndexes1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Indexes_btnDeleteIndexes1.setOpaque(false);
+        Indexes_btnDeleteIndexes1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Indexes_btnDeleteIndexes1ActionPerformed(evt);
+            }
+        });
+
+        INDEXES_btnEditIndex1.setBackground(new java.awt.Color(255, 255, 255));
+        INDEXES_btnEditIndex1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/editTable-icon24px.png"))); // NOI18N
+        INDEXES_btnEditIndex1.setToolTipText("Editar Tabla");
+        INDEXES_btnEditIndex1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        INDEXES_btnEditIndex1.setOpaque(false);
+        INDEXES_btnEditIndex1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                INDEXES_btnEditIndex1ActionPerformed(evt);
+            }
+        });
+
+        pnl_ManagerIndexes_SubMenu1.setLayout(new java.awt.CardLayout());
+
+        pnlIndexesMain1.setBackground(new java.awt.Color(255, 255, 255));
+
+        iconMainCheck2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        iconMainCheck2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/check-icon120px.png"))); // NOI18N
+
+        javax.swing.GroupLayout pnlIndexesMain1Layout = new javax.swing.GroupLayout(pnlIndexesMain1);
+        pnlIndexesMain1.setLayout(pnlIndexesMain1Layout);
+        pnlIndexesMain1Layout.setHorizontalGroup(
+            pnlIndexesMain1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlIndexesMain1Layout.createSequentialGroup()
+                .addGap(161, 161, 161)
+                .addComponent(iconMainCheck2, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(140, Short.MAX_VALUE))
+        );
+        pnlIndexesMain1Layout.setVerticalGroup(
+            pnlIndexesMain1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlIndexesMain1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(iconMainCheck2, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(67, Short.MAX_VALUE))
+        );
+
+        pnl_ManagerIndexes_SubMenu1.add(pnlIndexesMain1, "card2");
+
+        pnlEditIndexes1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane34.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane34.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jScrollPane34.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        INDEXES_txtArea_EditIndex1.setColumns(5);
+        INDEXES_txtArea_EditIndex1.setLineWrap(true);
+        INDEXES_txtArea_EditIndex1.setRows(5);
+        jScrollPane34.setViewportView(INDEXES_txtArea_EditIndex1);
+
+        Indexes_btnIndex1.setBackground(new java.awt.Color(255, 255, 255));
+        Indexes_btnIndex1.setText("Actualizar");
+        Indexes_btnIndex1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Indexes_btnIndex1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlEditIndexes1Layout = new javax.swing.GroupLayout(pnlEditIndexes1);
+        pnlEditIndexes1.setLayout(pnlEditIndexes1Layout);
+        pnlEditIndexes1Layout.setHorizontalGroup(
+            pnlEditIndexes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEditIndexes1Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(50, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEditIndexes1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Indexes_btnIndex1)
+                .addGap(70, 70, 70))
+        );
+        pnlEditIndexes1Layout.setVerticalGroup(
+            pnlEditIndexes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEditIndexes1Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Indexes_btnIndex1)
+                .addContainerGap(83, Short.MAX_VALUE))
+        );
+
+        pnl_ManagerIndexes_SubMenu1.add(pnlEditIndexes1, "card3");
+
+        pnlShowIndexes1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane36.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        Indexes_tableInfoIndexes1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Título 1", "Título 2", "Título 3", "Título 4"
+            }
+        ));
+        jScrollPane36.setViewportView(Indexes_tableInfoIndexes1);
+        Indexes_tableInfoIndexes1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+
+        javax.swing.GroupLayout pnlShowIndexes1Layout = new javax.swing.GroupLayout(pnlShowIndexes1);
+        pnlShowIndexes1.setLayout(pnlShowIndexes1Layout);
+        pnlShowIndexes1Layout.setHorizontalGroup(
+            pnlShowIndexes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlShowIndexes1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane36, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        pnlShowIndexes1Layout.setVerticalGroup(
+            pnlShowIndexes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlShowIndexes1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
+        );
+
+        pnl_ManagerIndexes_SubMenu1.add(pnlShowIndexes1, "card3");
+
+        pnlIndexesSQL1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane37.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane37.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        INDEXES_txtArea_IndexesSQL1.setColumns(20);
+        INDEXES_txtArea_IndexesSQL1.setLineWrap(true);
+        INDEXES_txtArea_IndexesSQL1.setRows(5);
+        INDEXES_txtArea_IndexesSQL1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jScrollPane37.setViewportView(INDEXES_txtArea_IndexesSQL1);
+
+        javax.swing.GroupLayout pnlIndexesSQL1Layout = new javax.swing.GroupLayout(pnlIndexesSQL1);
+        pnlIndexesSQL1.setLayout(pnlIndexesSQL1Layout);
+        pnlIndexesSQL1Layout.setHorizontalGroup(
+            pnlIndexesSQL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlIndexesSQL1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane37, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        pnlIndexesSQL1Layout.setVerticalGroup(
+            pnlIndexesSQL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlIndexesSQL1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane37, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        pnl_ManagerIndexes_SubMenu1.add(pnlIndexesSQL1, "card5");
+
+        javax.swing.GroupLayout pnl_ManagerFunctionsLayout = new javax.swing.GroupLayout(pnl_ManagerFunctions);
+        pnl_ManagerFunctions.setLayout(pnl_ManagerFunctionsLayout);
+        pnl_ManagerFunctionsLayout.setHorizontalGroup(
+            pnl_ManagerFunctionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator13, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(pnl_ManagerFunctionsLayout.createSequentialGroup()
+                .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnl_ManagerFunctionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnl_ManagerFunctionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(INDEXES_btnShowIndexes1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(INDEXES_btnIndexesSQL1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Indexes_btnDeleteIndexes1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(INDEXES_btnEditIndex1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pnl_ManagerIndexes_SubMenu1, javax.swing.GroupLayout.PREFERRED_SIZE, 733, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(pnl_ManagerFunctionsLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(CHECK_btnCreateCHECK2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnl_ManagerFunctionsLayout.setVerticalGroup(
+            pnl_ManagerFunctionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_ManagerFunctionsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(CHECK_btnCreateCHECK2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnl_ManagerFunctionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnl_ManagerFunctionsLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(INDEXES_btnShowIndexes1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Indexes_btnDeleteIndexes1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(INDEXES_btnEditIndex1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(INDEXES_btnIndexesSQL1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnl_ManagerFunctionsLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnl_ManagerFunctionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pnl_ManagerIndexes_SubMenu1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(166, 166, 166))
+        );
+
+        pnl_ManagerSubPanel.add(pnl_ManagerFunctions, "card4");
+
+        pnl_ManagerDatabase.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane38.setBackground(new java.awt.Color(255, 255, 255));
+
+        Database_listDatabase.setBackground(new java.awt.Color(255, 255, 255));
+        Database_listDatabase.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        Database_listDatabase.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        Database_listDatabase.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane38.setViewportView(Database_listDatabase);
+
+        jSeparator15.setBackground(new java.awt.Color(0, 102, 102));
+
+        jSeparator16.setBackground(new java.awt.Color(0, 102, 102));
+        jSeparator16.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        Database_btnShow.setBackground(new java.awt.Color(255, 255, 255));
+        Database_btnShow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/update-icon18px.png"))); // NOI18N
+        Database_btnShow.setToolTipText("Mostrar Tabla");
+        Database_btnShow.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Database_btnShow.setOpaque(false);
+        Database_btnShow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Database_btnShowActionPerformed(evt);
+            }
+        });
+
+        pnl_ManagerDatabase_SubMenu1.setLayout(new java.awt.CardLayout());
+
+        pnlDatabeseMain.setBackground(new java.awt.Color(255, 255, 255));
+
+        iconMainTrigger1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        iconMainTrigger1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/triggers-icon120px.png"))); // NOI18N
+
+        jLabel43.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel43.setText("CREAR BASE DE DATOS");
+
+        Database_TextName.setBackground(new java.awt.Color(255, 255, 255));
+        Database_TextName.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        Database_TextName.setForeground(new java.awt.Color(102, 102, 102));
+
+        jButton8.setBackground(new java.awt.Color(255, 255, 255));
+        jButton8.setText("CREAR DATABASE");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlDatabeseMainLayout = new javax.swing.GroupLayout(pnlDatabeseMain);
+        pnlDatabeseMain.setLayout(pnlDatabeseMainLayout);
+        pnlDatabeseMainLayout.setHorizontalGroup(
+            pnlDatabeseMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDatabeseMainLayout.createSequentialGroup()
+                .addGroup(pnlDatabeseMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlDatabeseMainLayout.createSequentialGroup()
+                        .addGap(257, 257, 257)
+                        .addComponent(iconMainTrigger1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlDatabeseMainLayout.createSequentialGroup()
+                        .addGap(239, 239, 239)
+                        .addGroup(pnlDatabeseMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Database_TextName, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel43)))
+                    .addGroup(pnlDatabeseMainLayout.createSequentialGroup()
+                        .addGap(271, 271, 271)
+                        .addComponent(jButton8)))
+                .addContainerGap(283, Short.MAX_VALUE))
+        );
+        pnlDatabeseMainLayout.setVerticalGroup(
+            pnlDatabeseMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDatabeseMainLayout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addComponent(iconMainTrigger1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel43)
+                .addGap(18, 18, 18)
+                .addComponent(Database_TextName, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton8)
+                .addContainerGap(91, Short.MAX_VALUE))
+        );
+
+        pnl_ManagerDatabase_SubMenu1.add(pnlDatabeseMain, "card2");
+
+        pnlDatabeseDDL.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane39.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTextArea2.setBackground(new java.awt.Color(255, 255, 255));
+        jTextArea2.setColumns(20);
+        jTextArea2.setForeground(new java.awt.Color(102, 102, 102));
+        jTextArea2.setRows(5);
+        jScrollPane39.setViewportView(jTextArea2);
+
+        javax.swing.GroupLayout pnlDatabeseDDLLayout = new javax.swing.GroupLayout(pnlDatabeseDDL);
+        pnlDatabeseDDL.setLayout(pnlDatabeseDDLLayout);
+        pnlDatabeseDDLLayout.setHorizontalGroup(
+            pnlDatabeseDDLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDatabeseDDLLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(jScrollPane39, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(89, Short.MAX_VALUE))
+        );
+        pnlDatabeseDDLLayout.setVerticalGroup(
+            pnlDatabeseDDLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDatabeseDDLLayout.createSequentialGroup()
+                .addGap(116, 116, 116)
+                .addComponent(jScrollPane39, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+
+        pnl_ManagerDatabase_SubMenu1.add(pnlDatabeseDDL, "card2");
+
+        Database_btnShow1.setBackground(new java.awt.Color(255, 255, 255));
+        Database_btnShow1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/trash-icon24px.png"))); // NOI18N
+        Database_btnShow1.setToolTipText("Mostrar Tabla");
+        Database_btnShow1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Database_btnShow1.setOpaque(false);
+        Database_btnShow1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Database_btnShow1ActionPerformed(evt);
+            }
+        });
+
+        Database_btnShow2.setBackground(new java.awt.Color(255, 255, 255));
+        Database_btnShow2.setText("DDL");
+        Database_btnShow2.setToolTipText("Mostrar Tabla");
+        Database_btnShow2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Database_btnShow2.setOpaque(false);
+        Database_btnShow2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Database_btnShow2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnl_ManagerDatabaseLayout = new javax.swing.GroupLayout(pnl_ManagerDatabase);
+        pnl_ManagerDatabase.setLayout(pnl_ManagerDatabaseLayout);
+        pnl_ManagerDatabaseLayout.setHorizontalGroup(
+            pnl_ManagerDatabaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator15, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(pnl_ManagerDatabaseLayout.createSequentialGroup()
+                .addComponent(jScrollPane38, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnl_ManagerDatabaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnl_ManagerDatabaseLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                        .addGroup(pnl_ManagerDatabaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Database_btnShow1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Database_btnShow, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(pnl_ManagerDatabaseLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Database_btnShow2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jSeparator16, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pnl_ManagerDatabase_SubMenu1, javax.swing.GroupLayout.PREFERRED_SIZE, 733, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        pnl_ManagerDatabaseLayout.setVerticalGroup(
+            pnl_ManagerDatabaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_ManagerDatabaseLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnl_ManagerDatabaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnl_ManagerDatabaseLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(Database_btnShow, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
+                        .addComponent(Database_btnShow1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(53, 53, 53)
+                        .addComponent(Database_btnShow2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnl_ManagerDatabaseLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnl_ManagerDatabaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator16, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pnl_ManagerDatabase_SubMenu1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane38, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(166, 166, 166))
+        );
+
+        pnl_ManagerSubPanel.add(pnl_ManagerDatabase, "card4");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(panelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnl_ManagerSubPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 983, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -2972,6 +4569,9 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         selectBotonColor(jLabel2);
+        INDEXES_cargarIndexes();
+        cambiarParentContainer(pnl_ManagerIndexes);
+        
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
@@ -2989,7 +4589,6 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         cambiarParentContainer(pnl_ManagerViews);
         VIEWS_cargarListViews();
         VIEWS_cambiarPanelSubMenu(pnlViewMain);
-       
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
@@ -3005,6 +4604,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         selectBotonColor(jLabel7);
+        CHECK_cargarChecks();
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void btnShowTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowTableActionPerformed
@@ -3336,7 +4936,11 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     }//GEN-LAST:event_PROCEDURE_Create_cmbSchemaItemStateChanged
 
     private void PROCEDURE_Create_btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PROCEDURE_Create_btnCancelarActionPerformed
-        changePanels(PROCEDURE_Create_pnlSubMenu, PROCEDURE_panelContentComponent);
+        int op=JOptionPane.showConfirmDialog(null,"¿Seguro de cancelar la operacion?","CANCELAR",JOptionPane.YES_NO_OPTION);
+        if(op==JOptionPane.YES_OPTION){
+            cargarProcedimientos();
+        }
+       
     }//GEN-LAST:event_PROCEDURE_Create_btnCancelarActionPerformed
 
     private void PROCEDURE_Create_btnAgregarProcedureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PROCEDURE_Create_btnAgregarProcedureActionPerformed
@@ -3344,16 +4948,16 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
             database.ejecutarOperacion(PROCEDURE_Create_txtADDL.getText());
             JOptionPane.showMessageDialog(null,"Procedimiento creado exitosamente");
             PROCEDURE_Create_cargarData();
-            cambiarParentContainer(pnl_ManagerProcedure);
+            cargarProcedimientos();     
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null,"Error durante la operacion\nNose pudo crear el procedimiento","Crear Procedimiento",JOptionPane.ERROR_MESSAGE);
             Logger.getLogger(JF_PrincipalPage.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_PROCEDURE_Create_btnAgregarProcedureActionPerformed
 
-    private void TRIGGERS_btn_pnlAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TRIGGERS_btn_pnlAtras1ActionPerformed
+    private void PROCEDURE_btn_pnlAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PROCEDURE_btn_pnlAtrasActionPerformed
         cambiarParentContainer(pnl_ManagerProcedure);
-    }//GEN-LAST:event_TRIGGERS_btn_pnlAtras1ActionPerformed
+    }//GEN-LAST:event_PROCEDURE_btn_pnlAtrasActionPerformed
 
     private void TRIGGERS_btnCreateTriggers1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TRIGGERS_btnCreateTriggers1ActionPerformed
         cambiarParentContainer(PROCEDURES_Create_pnlProcedure);
@@ -3397,13 +5001,233 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        eliminarFilaSeleccionada(jTable4);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void PROCEDURE_Creaye_btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PROCEDURE_Creaye_btnAceptarActionPerformed
         changePanels(PROCEDURE_Create_pnlSubMenu,PROCEDURE_Create_TextDLL);
         PROCEDURE_Create_prepareData();
     }//GEN-LAST:event_PROCEDURE_Creaye_btnAceptarActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        changePanels(PROCEDURE_Create_pnlSubMenu, PROCEDURE_panelContentComponent);
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void CHECK_btnCreateCHECKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CHECK_btnCreateCHECKActionPerformed
+        cambiarParentContainer(CHECK_pnlCreateCheck);
+        CHECK_Create_Cargar();
+    }//GEN-LAST:event_CHECK_btnCreateCHECKActionPerformed
+
+    private void CHECK_btnShowChecksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CHECK_btnShowChecksActionPerformed
+        CHECK_cargarInfoCheckToTabla();
+    }//GEN-LAST:event_CHECK_btnShowChecksActionPerformed
+
+    private void CHECK_btnCheckSQLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CHECK_btnCheckSQLActionPerformed
+        CHECK_cargarDDL();
+        CHECK_cambiarPanelSubMenu(pnlChekSQL);
+    }//GEN-LAST:event_CHECK_btnCheckSQLActionPerformed
+
+    private void CHECK_btnDeleteCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CHECK_btnDeleteCheckActionPerformed
+        CHECK_cambiarPanelSubMenu(pnlCheckMain);
+        CHECK_deleteCheck();   
+    }//GEN-LAST:event_CHECK_btnDeleteCheckActionPerformed
+
+    private void CHECK_btnEditCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CHECK_btnEditCheckActionPerformed
+        CHECK_cambiarPanelSubMenu(pnlEditCheck);
+        CHECK_cargarDDL();
+        CHECK_txtArea_EditCheck.setText(Check_txtArea_CheckSQL.getText());
+    }//GEN-LAST:event_CHECK_btnEditCheckActionPerformed
+
+    private void CHECK_btnCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CHECK_btnCheckActionPerformed
+        CHECK_UpdateCheck();
+    }//GEN-LAST:event_CHECK_btnCheckActionPerformed
+
+    private void CHECK_Create_cmbShowSchemaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CHECK_Create_cmbShowSchemaItemStateChanged
+      if(evt.getStateChange()==ItemEvent.SELECTED){
+        if(CHECK_Create_cmbShowSchema.getSelectedIndex()>-1){
+                String sql="SELECT TABLE_NAME FROM SYSIBM.TABLES WHERE TABLE_TYPE='BASE TABLE' AND "
+                        + "TABLE_SCHEMA='"+CHECK_Create_cmbShowSchema.getItemAt(CHECK_Create_cmbShowSchema.getSelectedIndex())
+                        +"' ORDER BY TABLE_NAME";
+               cargarDatosComboxBox(sql, CHECK_Create_cmbShowTable);
+                CHECK_Create_cmbShowTable.setSelectedIndex(-1);
+                CHECK_updateTextArea();
+            }
+      }
+    }//GEN-LAST:event_CHECK_Create_cmbShowSchemaItemStateChanged
+
+    private void CHECK_btn_pnlAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CHECK_btn_pnlAtrasActionPerformed
+        cambiarParentContainer(pnl_ManagerChecks);
+    }//GEN-LAST:event_CHECK_btn_pnlAtrasActionPerformed
+
+    private void CHECK_Create_btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CHECK_Create_btnAgregarActionPerformed
+        try {
+            System.out.println(CHECK_Create_txtAstateman.getText());
+            database.ejecutarOperacion(CHECK_Create_txtAstateman.getText());
+            cambiarParentContainer(pnl_ManagerViews);
+            JOptionPane.showMessageDialog(null,"Check creado exitosamente");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Erro al intentar crear check","CREATE CHECK",JOptionPane.ERROR_MESSAGE);
+            Logger.getLogger(JF_PrincipalPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_CHECK_Create_btnAgregarActionPerformed
+
+    private void CHECK_Create_btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CHECK_Create_btnCancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CHECK_Create_btnCancelarActionPerformed
+
+    private void CHECK_Create_cmbShowTableItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CHECK_Create_cmbShowTableItemStateChanged
+       if(evt.getStateChange()==ItemEvent.SELECTED){
+           CHECK_updateTextArea();
+       }
+    }//GEN-LAST:event_CHECK_Create_cmbShowTableItemStateChanged
+
+    private void CHECK_Create_txtNameCheckKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CHECK_Create_txtNameCheckKeyReleased
+        CHECK_updateTextArea();
+    }//GEN-LAST:event_CHECK_Create_txtNameCheckKeyReleased
+
+    private void CHECK_Create_txtCoditionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CHECK_Create_txtCoditionKeyReleased
+        CHECK_updateTextArea();
+    }//GEN-LAST:event_CHECK_Create_txtCoditionKeyReleased
+
+    private void CHECK_btnCreateCHECK1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CHECK_btnCreateCHECK1ActionPerformed
+        cambiarParentContainer(INDEXES_pnlCreateIndex);
+        INDEX_Create_Cargar();
+    }//GEN-LAST:event_CHECK_btnCreateCHECK1ActionPerformed
+
+    private void INDEXES_btnShowIndexesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INDEXES_btnShowIndexesActionPerformed
+       INDEXES_cambiarPanel(pnlShowIndexes);
+       INDEXES_cargarInfoIndexes();
+    }//GEN-LAST:event_INDEXES_btnShowIndexesActionPerformed
+
+    private void INDEXES_btnIndexesSQLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INDEXES_btnIndexesSQLActionPerformed
+        INDEXES_getDLL();
+        INDEXES_cambiarPanel(pnlIndexesSQL);
+    }//GEN-LAST:event_INDEXES_btnIndexesSQLActionPerformed
+
+    private void Indexes_btnDeleteIndexesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Indexes_btnDeleteIndexesActionPerformed
+        INDEXES_cambiarPanel(pnlIndexesMain);
+        INDEXES_deleteIndex();
+    }//GEN-LAST:event_Indexes_btnDeleteIndexesActionPerformed
+
+    private void INDEXES_btnEditIndexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INDEXES_btnEditIndexActionPerformed
+        INDEXES_editIndexes();
+        INDEXES_cambiarPanel(pnlEditIndexes);
+    }//GEN-LAST:event_INDEXES_btnEditIndexActionPerformed
+
+    private void Indexes_btnIndexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Indexes_btnIndexActionPerformed
+        INDEXES_updateIndice();
+        INDEXES_cambiarPanel(pnlIndexesMain);
+        
+    }//GEN-LAST:event_Indexes_btnIndexActionPerformed
+
+    private void INDEX_Create_txtNameIndexKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_INDEX_Create_txtNameIndexKeyReleased
+       
+           INDEX_updateTextArea();
+       
+    }//GEN-LAST:event_INDEX_Create_txtNameIndexKeyReleased
+
+    private void INDEX_Create_cmbShowSchemaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_INDEX_Create_cmbShowSchemaItemStateChanged
+       if(evt.getStateChange()==ItemEvent.SELECTED){
+        if(INDEX_Create_cmbShowSchema.getSelectedIndex()>-1){
+                String sql="SELECT TABLE_NAME FROM SYSIBM.TABLES WHERE TABLE_TYPE='BASE TABLE' AND "
+                        + "TABLE_SCHEMA='"+INDEX_Create_cmbShowSchema.getItemAt(INDEX_Create_cmbShowSchema.getSelectedIndex())
+                        +"' ORDER BY TABLE_NAME";
+               cargarDatosComboxBox(sql, INDEX_Create_cmbShowTable);
+                INDEX_Create_cmbShowTable.setSelectedIndex(-1);
+                INDEX_updateTextArea();
+            }
+      }
+    }//GEN-LAST:event_INDEX_Create_cmbShowSchemaItemStateChanged
+
+    private void INDEX_Create_cmbShowTableItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_INDEX_Create_cmbShowTableItemStateChanged
+         if(evt.getStateChange()==ItemEvent.SELECTED){
+           INDEX_updateTextArea();
+       }
+    }//GEN-LAST:event_INDEX_Create_cmbShowTableItemStateChanged
+
+    private void INDEX_Create_txtCoditionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_INDEX_Create_txtCoditionKeyReleased
+       INDEX_updateTextArea();
+    }//GEN-LAST:event_INDEX_Create_txtCoditionKeyReleased
+
+    private void INDEX_btn_pnlAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INDEX_btn_pnlAtras1ActionPerformed
+        cambiarParentContainer(pnl_ManagerIndexes);
+    }//GEN-LAST:event_INDEX_btn_pnlAtras1ActionPerformed
+
+    private void CHECK_Create_btnCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CHECK_Create_btnCancelar1ActionPerformed
+        
+       
+    }//GEN-LAST:event_CHECK_Create_btnCancelar1ActionPerformed
+
+    private void CHECK_Create_btnAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CHECK_Create_btnAgregar1ActionPerformed
+        INDEX_createIndex();
+    }//GEN-LAST:event_CHECK_Create_btnAgregar1ActionPerformed
+
+    private void jCheckBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCheckBox1ItemStateChanged
+        if(evt.getStateChange()==ItemEvent.ITEM_STATE_CHANGED){
+           INDEX_updateTextArea();
+       }
+    }//GEN-LAST:event_jCheckBox1ItemStateChanged
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        INDEX_updateTextArea();
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void CHECK_btnCreateCHECK2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CHECK_btnCreateCHECK2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CHECK_btnCreateCHECK2ActionPerformed
+
+    private void INDEXES_btnShowIndexes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INDEXES_btnShowIndexes1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_INDEXES_btnShowIndexes1ActionPerformed
+
+    private void INDEXES_btnIndexesSQL1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INDEXES_btnIndexesSQL1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_INDEXES_btnIndexesSQL1ActionPerformed
+
+    private void Indexes_btnDeleteIndexes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Indexes_btnDeleteIndexes1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Indexes_btnDeleteIndexes1ActionPerformed
+
+    private void INDEXES_btnEditIndex1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INDEXES_btnEditIndex1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_INDEXES_btnEditIndex1ActionPerformed
+
+    private void Indexes_btnIndex1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Indexes_btnIndex1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Indexes_btnIndex1ActionPerformed
+
+    private void jLabel41MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel41MouseClicked
+         selectBotonColor(jLabel41);
+         cambiarParentContainer(pnl_ManagerFunctions);
+         FUNCTIONS_cargar();
+    }//GEN-LAST:event_jLabel41MouseClicked
+
+    private void jLabel42MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel42MouseClicked
+        selectBotonColor(jLabel42);
+        DataBase_cargar();
+        cambiarParentContainer(pnl_ManagerDatabase);
+    }//GEN-LAST:event_jLabel42MouseClicked
+
+    private void Database_btnShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Database_btnShowActionPerformed
+        DataBase_cargar();
+        changePanels(pnl_ManagerDatabase_SubMenu1, pnlDatabeseMain);
+        
+    }//GEN-LAST:event_Database_btnShowActionPerformed
+
+    private void Database_btnShow1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Database_btnShow1ActionPerformed
+        DataBase_delete();
+        DataBase_cargar();
+    }//GEN-LAST:event_Database_btnShow1ActionPerformed
+
+    private void Database_btnShow2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Database_btnShow2ActionPerformed
+        jTextArea2.setText("CREATE SCHEMA "+Database_listDatabase.getSelectedValue());
+        changePanels(pnl_ManagerDatabase_SubMenu1, pnlDatabeseDDL);
+    }//GEN-LAST:event_Database_btnShow2ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        DataBase_crear();
+        DataBase_cargar();
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3442,6 +5266,32 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CHECK_Create_btnAgregar;
+    private javax.swing.JButton CHECK_Create_btnAgregar1;
+    private javax.swing.JButton CHECK_Create_btnCancelar;
+    private javax.swing.JButton CHECK_Create_btnCancelar1;
+    private javax.swing.JComboBox<String> CHECK_Create_cmbShowSchema;
+    private javax.swing.JComboBox<String> CHECK_Create_cmbShowTable;
+    private javax.swing.JPanel CHECK_Create_pnlCONTENTCheck;
+    private javax.swing.JPanel CHECK_Create_pnlCONTENTCheck1;
+    private javax.swing.JPanel CHECK_Create_pnlSubMenu;
+    private javax.swing.JPanel CHECK_Create_pnlSubMenu1;
+    private javax.swing.JTextArea CHECK_Create_txtAstateman;
+    private javax.swing.JTextField CHECK_Create_txtCodition;
+    private javax.swing.JTextField CHECK_Create_txtNameCheck;
+    private javax.swing.JButton CHECK_btnCheck;
+    private javax.swing.JButton CHECK_btnCheckSQL;
+    private javax.swing.JButton CHECK_btnCreateCHECK;
+    private javax.swing.JButton CHECK_btnCreateCHECK1;
+    private javax.swing.JButton CHECK_btnCreateCHECK2;
+    private javax.swing.JButton CHECK_btnDeleteCheck;
+    private javax.swing.JButton CHECK_btnEditCheck;
+    private javax.swing.JButton CHECK_btnShowChecks;
+    private javax.swing.JButton CHECK_btn_pnlAtras;
+    private javax.swing.JList<String> CHECK_listCheck;
+    private javax.swing.JPanel CHECK_pnlCreateCheck;
+    private javax.swing.JTable CHECK_tableInfoCheck;
+    private javax.swing.JTextArea CHECK_txtArea_EditCheck;
     private javax.swing.JButton CT_btnAgregarTabla;
     private javax.swing.JButton CT_btnAgregarTabla1;
     private javax.swing.JButton CT_btnCancelar;
@@ -3449,6 +5299,37 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JButton CT_btnShowAddColumn;
     private javax.swing.JButton CT_btnShowSQL;
     private javax.swing.JTextArea CT_txtAreaSQLScript;
+    private javax.swing.JTextArea Check_txtArea_CheckSQL;
+    private javax.swing.JTextField Database_TextName;
+    private javax.swing.JButton Database_btnShow;
+    private javax.swing.JButton Database_btnShow1;
+    private javax.swing.JButton Database_btnShow2;
+    private javax.swing.JList<String> Database_listDatabase;
+    private javax.swing.JList<String> FUNCTIONS_listFunctions;
+    private javax.swing.JButton INDEXES_btnEditIndex;
+    private javax.swing.JButton INDEXES_btnEditIndex1;
+    private javax.swing.JButton INDEXES_btnIndexesSQL;
+    private javax.swing.JButton INDEXES_btnIndexesSQL1;
+    private javax.swing.JButton INDEXES_btnShowIndexes;
+    private javax.swing.JButton INDEXES_btnShowIndexes1;
+    private javax.swing.JList<String> INDEXES_listIndexes;
+    private javax.swing.JPanel INDEXES_pnlCreateIndex;
+    private javax.swing.JTextArea INDEXES_txtArea_EditIndex;
+    private javax.swing.JTextArea INDEXES_txtArea_EditIndex1;
+    private javax.swing.JTextArea INDEXES_txtArea_IndexesSQL;
+    private javax.swing.JTextArea INDEXES_txtArea_IndexesSQL1;
+    private javax.swing.JComboBox<String> INDEX_Create_cmbShowSchema;
+    private javax.swing.JComboBox<String> INDEX_Create_cmbShowTable;
+    private javax.swing.JTextArea INDEX_Create_txtAstateman;
+    private javax.swing.JTextField INDEX_Create_txtCodition;
+    private javax.swing.JTextField INDEX_Create_txtNameIndex;
+    private javax.swing.JButton INDEX_btn_pnlAtras1;
+    private javax.swing.JButton Indexes_btnDeleteIndexes;
+    private javax.swing.JButton Indexes_btnDeleteIndexes1;
+    private javax.swing.JButton Indexes_btnIndex;
+    private javax.swing.JButton Indexes_btnIndex1;
+    private javax.swing.JTable Indexes_tableInfoIndexes;
+    private javax.swing.JTable Indexes_tableInfoIndexes1;
     private javax.swing.JPanel PROCEDURES_Create_pnlProcedure;
     private javax.swing.JButton PROCEDURES_btnProcedureSQL;
     private javax.swing.JPanel PROCEDURE_Create_TextDLL;
@@ -3462,6 +5343,7 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JButton PROCEDURE_btnEditProcedure;
     private javax.swing.JButton PROCEDURE_btnShowProcedure;
     private javax.swing.JButton PROCEDURE_btnUpdate;
+    private javax.swing.JButton PROCEDURE_btn_pnlAtras;
     private javax.swing.JComboBox<String> PROCEDURE_cmbDataType;
     private javax.swing.JComboBox<String> PROCEDURE_cmbModo;
     private javax.swing.JList<String> PROCEDURE_listProcedimientos;
@@ -3493,7 +5375,6 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JButton TRIGGERS_btnTriggersSQL;
     private javax.swing.JButton TRIGGERS_btnUpdate;
     private javax.swing.JButton TRIGGERS_btn_pnlAtras;
-    private javax.swing.JButton TRIGGERS_btn_pnlAtras1;
     private javax.swing.JList<String> TRIGGERS_listTriggers;
     private javax.swing.JPanel TRIGGERS_pnlCreateTrigger;
     private javax.swing.JTable TRIGGERS_tableTriggers;
@@ -3535,8 +5416,12 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmbDataType1;
     private javax.swing.JPanel contentEvent;
     private javax.swing.ButtonGroup gruopButton_TriggerschkTiming;
+    private javax.swing.JLabel iconMainCheck;
+    private javax.swing.JLabel iconMainCheck1;
+    private javax.swing.JLabel iconMainCheck2;
     private javax.swing.JLabel iconMainProcedure;
     private javax.swing.JLabel iconMainTrigger;
+    private javax.swing.JLabel iconMainTrigger1;
     private javax.swing.JLabel iconMainView;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -3544,6 +5429,9 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -3568,12 +5456,28 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -3585,6 +5489,8 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
@@ -3606,7 +5512,23 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane21;
     private javax.swing.JScrollPane jScrollPane22;
     private javax.swing.JScrollPane jScrollPane23;
+    private javax.swing.JScrollPane jScrollPane24;
+    private javax.swing.JScrollPane jScrollPane25;
+    private javax.swing.JScrollPane jScrollPane26;
+    private javax.swing.JScrollPane jScrollPane27;
+    private javax.swing.JScrollPane jScrollPane28;
+    private javax.swing.JScrollPane jScrollPane29;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane30;
+    private javax.swing.JScrollPane jScrollPane31;
+    private javax.swing.JScrollPane jScrollPane32;
+    private javax.swing.JScrollPane jScrollPane33;
+    private javax.swing.JScrollPane jScrollPane34;
+    private javax.swing.JScrollPane jScrollPane35;
+    private javax.swing.JScrollPane jScrollPane36;
+    private javax.swing.JScrollPane jScrollPane37;
+    private javax.swing.JScrollPane jScrollPane38;
+    private javax.swing.JScrollPane jScrollPane39;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
@@ -3614,6 +5536,13 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
+    private javax.swing.JSeparator jSeparator13;
+    private javax.swing.JSeparator jSeparator14;
+    private javax.swing.JSeparator jSeparator15;
+    private javax.swing.JSeparator jSeparator16;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
@@ -3621,21 +5550,37 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JLabel lblSchema;
     private javax.swing.JList<String> listTable;
     private javax.swing.JPanel pEncabezado;
     private javax.swing.JPanel panelLateral;
+    private javax.swing.JPanel pnlCheckMain;
+    private javax.swing.JPanel pnlChekSQL;
     private javax.swing.JPanel pnlData;
+    private javax.swing.JPanel pnlDatabeseDDL;
+    private javax.swing.JPanel pnlDatabeseMain;
+    private javax.swing.JPanel pnlEditCheck;
+    private javax.swing.JPanel pnlEditIndexes;
+    private javax.swing.JPanel pnlEditIndexes1;
     private javax.swing.JPanel pnlEditProcedure;
     private javax.swing.JPanel pnlEditTrigger;
     private javax.swing.JPanel pnlEditView;
+    private javax.swing.JPanel pnlIndexesMain;
+    private javax.swing.JPanel pnlIndexesMain1;
+    private javax.swing.JPanel pnlIndexesSQL;
+    private javax.swing.JPanel pnlIndexesSQL1;
     private javax.swing.JPanel pnlProcedureMain;
     private javax.swing.JPanel pnlProcedureSQL;
+    private javax.swing.JPanel pnlShowCheck;
+    private javax.swing.JPanel pnlShowIndexes;
+    private javax.swing.JPanel pnlShowIndexes1;
     private javax.swing.JPanel pnlShowProcedure;
     private javax.swing.JPanel pnlShowTrigger;
     private javax.swing.JPanel pnlShowViews;
@@ -3651,6 +5596,14 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
     private javax.swing.JPanel pnl_CT_EditTable1;
     private javax.swing.JPanel pnl_CT_SQLPanel;
     private javax.swing.JPanel pnl_EditTable;
+    private javax.swing.JPanel pnl_ManagerCheck_SubMenu;
+    private javax.swing.JPanel pnl_ManagerChecks;
+    private javax.swing.JPanel pnl_ManagerDatabase;
+    private javax.swing.JPanel pnl_ManagerDatabase_SubMenu1;
+    private javax.swing.JPanel pnl_ManagerFunctions;
+    private javax.swing.JPanel pnl_ManagerIndexes;
+    private javax.swing.JPanel pnl_ManagerIndexes_SubMenu;
+    private javax.swing.JPanel pnl_ManagerIndexes_SubMenu1;
     private javax.swing.JPanel pnl_ManagerProcedure;
     private javax.swing.JPanel pnl_ManagerProcedure_SubMenu;
     private javax.swing.JPanel pnl_ManagerSubPanel;
@@ -3693,8 +5646,8 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         jLabel5.setBackground(color);
         jLabel6.setBackground(color);
         jLabel7.setBackground(color);
-       
-        
+       jLabel41.setBackground(color);
+        jLabel42.setBackground(color);
     }
     private void selectBotonColor(JLabel lbl){
         lbl.setOpaque(true);
@@ -4336,8 +6289,15 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         PROCEDURE_txtNameParametro.setText("");
         PROCEDURE_cmbDataType.setSelectedIndex(-1);
         PROCEDURE_cmbModo.setSelectedIndex(-1);
-        jTable4.removeAll();
+        clearTabla(jTable4);
         PROCEDURE_Create_cmbSchema.setSelectedIndex(-1);
+        changePanels(PROCEDURE_Create_pnlSubMenu, PROCEDURE_panelContentComponent);
+    }
+    private void clearTable(JTable table){
+        for(int i=0;i<table.getRowCount();i++){
+            ((DefaultTableModel)table.getModel()).removeRow(i);
+        }
+    
     }
     private void PROCEDURE_cambiarPanelSubMenu(JPanel pnl){
         changePanels(pnl_ManagerProcedure_SubMenu,pnl);
@@ -4389,6 +6349,9 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
 
             if(!PROCEDURE_existeParametro(name, jTable4)){
                 PROCEDURE_addParametroToTable(name,mode, type,jTable4);
+                PROCEDURE_txtNameParametro.setText("");
+                PROCEDURE_cmbDataType.setSelectedIndex(-1);
+                PROCEDURE_cmbModo.setSelectedIndex(-1);
             }else{
                 JOptionPane.showMessageDialog(null, "Ya existe uma columna con el mismo nombre");
             } 
@@ -4439,11 +6402,231 @@ public class JF_PrincipalPage extends javax.swing.JFrame {
         PROCEDURE_Create_txtADDL.setText(script);
     }
     
+    private void CHECK_cargarChecks(){
+        String sqlCheck="SELECT NAME FROM SYSIBM.SYSCHECKS WHERE TBCREATOR= '"+SCHEMA+"'";
+        cargarList(sqlCheck,CHECK_listCheck);
+        cambiarParentContainer(pnl_ManagerChecks);
+        CHECK_cambiarPanelSubMenu(pnlCheckMain);
+    }
+
+    private void CHECK_cambiarPanelSubMenu(JPanel pnl) {
+        changePanels(pnl_ManagerCheck_SubMenu, pnl);
+    }
+    private void CHECK_cargarInfoCheckToTabla(){
+        String sqlinfoCkeck="SELECT * FROM SYSIBM.SYSCHECKS WHERE TBCREATOR= '"+SCHEMA+"' AND NAME='"+CHECK_listCheck.getSelectedValue()+"'";
+        cargarInfoTable(sqlinfoCkeck,CHECK_tableInfoCheck);
+        CHECK_cambiarPanelSubMenu(pnlShowCheck);
+    }
+    private void  CHECK_cargarDDL(){
+       String getSQLCheck="SELECT TEXT FROM SYSIBM.SYSCHECKS WHERE TBCREATOR= '"+SCHEMA+"' AND NAME='"+CHECK_listCheck.getSelectedValue()+"'";
+       String nameCK=CHECK_listCheck.getSelectedValue();
+        cargarTextArea(getSQLCheck,Check_txtArea_CheckSQL);
+        String code="( "+Check_txtArea_CheckSQL.getText()+" )";
+        Tabla t=new Tabla();
+        Check_txtArea_CheckSQL.setText(t.getAlterTableCheck(database,nameCK,SCHEMA)+code);
+        
+    }
+    
+    private void CHECK_deleteCheck(){  
+        try {
+            String nameTable="";
+            ResultSet rs=database.getConsulta("SELECT TBNAME FROM SYSIBM.SYSCHECKS WHERE TBCREATOR= '"+SCHEMA+"' AND NAME='"+CHECK_listCheck.getSelectedValue()+"'");
+            while(rs.next()){
+                nameTable=rs.getString(1);
+            }
+            Tabla tabla=new Tabla();
+            
+            String sql=tabla.getEliminarCheck(CHECK_listCheck.getSelectedValue(),nameTable,SCHEMA);
+            System.out.println(sql);
+            database.ejecutarOperacion(sql);
+            CHECK_cargarChecks();
+            JOptionPane.showConfirmDialog(null,"El Check ha sido eliminado exitosamente");
+        } catch (SQLException ex) {
+             JOptionPane.showMessageDialog(null,"Error al eliminar Check SQLCODE: "+ex.getSQLState(),"Eliminar",JOptionPane.ERROR_MESSAGE);
+            Logger.getLogger(JF_PrincipalPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void CHECK_UpdateCheck(){
+        try {
+            String nameTable="";
+            String nombreCheck=CHECK_listCheck.getSelectedValue();
+            ResultSet rs=database.getConsulta("SELECT TBNAME FROM SYSIBM.SYSCHECKS WHERE TBCREATOR= '"+SCHEMA+"' AND NAME='"+nombreCheck+"'");
+            String sqlUpdate=CHECK_txtArea_EditCheck.getText();
+            while(rs.next()){
+                nameTable=rs.getString(1);
+            }
+            Tabla tabla=new Tabla();
+            String sql=tabla.getEliminarCheck(nombreCheck,nameTable,SCHEMA);
+            database.ejecutarOperacion(sql);
+            database.ejecutarOperacion(sqlUpdate);
+            CHECK_cargarChecks();
+            JOptionPane.showMessageDialog(null,"El Check actualizado exitosamente");
+        } catch (SQLException ex) {
+             JOptionPane.showMessageDialog(null,"Error al actualizar Check SQLCODE: "+ex.getSQLState(),"Eliminar",JOptionPane.ERROR_MESSAGE);
+            Logger.getLogger(JF_PrincipalPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void CHECK_updateTextArea(){
+        String schema=CHECK_Create_cmbShowSchema.getSelectedItem().toString();
+        String table=(CHECK_Create_cmbShowTable.getSelectedItem()!=null?CHECK_Create_cmbShowTable.getSelectedItem().toString():"");
+        String nameCk=CHECK_Create_txtNameCheck.getText();
+        String condition=CHECK_Create_txtCodition.getText();
+        CHECK_Create_txtAstateman.setText("ALTER TABLE \""+schema+"\"."+table+"\n ADD CONSTRAINT "+nameCk+" CHECK ("+condition+")");
+    }
+    
+    private void CHECK_Create_Cargar(){
+        cargarDatosComboxBox("SELECT SCHEMANAME FROM SYSCAT.SCHEMATA",CHECK_Create_cmbShowSchema);
+        
+        String sql="SELECT TABLE_NAME FROM SYSIBM.TABLES WHERE TABLE_TYPE='BASE TABLE' AND TABLE_SCHEMA='"+SCHEMA+"' ORDER BY TABLE_NAME";
+        cargarDatosComboxBox(sql,CHECK_Create_cmbShowTable);
+        CHECK_Create_txtNameCheck.setText("");
+        CHECK_Create_txtCodition.setText("");
+        CHECK_Create_cmbShowTable.setSelectedIndex(-1);
+        CHECK_Create_cmbShowSchema.setSelectedItem(SCHEMA);
+        CHECK_updateTextArea();
+    }
+    
+    
+    
+    
+    private void INDEXES_cargarIndexes(){
+       String sql="SELECT * FROM SYSIBM.SYSINDEXES WHERE CREATOR='"+SCHEMA+"'";
+        cargarList(sql,INDEXES_listIndexes); 
+    }
+    
+    
+    private void INDEXES_cargarInfoIndexes(){
+        String sql="SELECT * FROM SYSIBM.SYSINDEXES WHERE CREATOR= '"+SCHEMA+"'"+" AND NAME= '"+INDEXES_listIndexes.getSelectedValue()+"'";
+        cargarInfoTable(sql, Indexes_tableInfoIndexes);
+    }
+    
+    
+
+    private void INDEXES_cambiarPanel(JPanel pnl) {
+        changePanels(pnl_ManagerIndexes_SubMenu,pnl);
+    }
+    
+    private void INDEXES_deleteIndex(){
+        int op=JOptionPane.showConfirmDialog(null,"¿Desea eliminar el Indice Seleccionado?", "Eliminar",JOptionPane.YES_NO_OPTION);
+        if(op==JOptionPane.YES_OPTION){
+            try {
+                 String sql="DROP INDEX "+INDEXES_listIndexes.getSelectedValue();
+                database.ejecutarOperacion(sql);
+                INDEXES_cargarIndexes();
+                JOptionPane.showMessageDialog(null, "Indice eliminado correctamente");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null,"Error al intentar eliminar indice","Eliminar Indice",JOptionPane.ERROR_MESSAGE);
+                Logger.getLogger(JF_PrincipalPage.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    
+    
+    private void INDEXES_getDLL(){
+        String name="",unique="",columns="",creator="",tabla="";
+        String sql="SELECT NAME,TBNAME,COLNAMES,CREATOR,UNIQUERULE FROM SYSIBM.SYSINDEXES WHERE CREATOR= '"+SCHEMA+"'"+" AND NAME= '"+INDEXES_listIndexes.getSelectedValue()+"'";
+        try {
+            ResultSet rs=database.getConsulta(sql);
+            while(rs.next()){
+                name=rs.getString(1);
+                tabla=rs.getString(2);
+                columns=rs.getString(3);
+                creator=rs.getString(4);
+                unique=rs.getString(5);
+            }
+            Tabla table=new Tabla();
+            String ddl="CREATE "+(unique.charAt(0)=='U'?"UNIQUE":"")+ " INDEX "+name+" ON \""+SCHEMA+"\"."+tabla+" ("+table.getColumnaIndexes(columns)+")";
+            INDEXES_txtArea_IndexesSQL.setText(ddl);
+        } catch (SQLException ex) {
+            Logger.getLogger(JF_PrincipalPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void INDEXES_editIndexes(){
+        INDEXES_getDLL();
+        INDEXES_txtArea_EditIndex.setText(INDEXES_txtArea_IndexesSQL.getText());
+    }
+    
+    private void INDEXES_updateIndice(){
+        String sql="DROP INDEX "+INDEXES_listIndexes.getSelectedValue();
+        try{
+        database.ejecutarOperacion(sql);
+        database.ejecutarOperacion(INDEXES_txtArea_EditIndex.getText());
+        JOptionPane.showMessageDialog(null, "El indice se actualizo exitosamente");
+        INDEXES_cargarIndexes();
+        }catch(SQLException e){
+             JOptionPane.showMessageDialog(null, "El indice no se pudo eliminar","Eliminar",JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
+    }
+    private void INDEX_Create_Cargar(){
+        cargarDatosComboxBox("SELECT SCHEMANAME FROM SYSCAT.SCHEMATA",INDEX_Create_cmbShowSchema);
+        
+        String sql="SELECT TABLE_NAME FROM SYSIBM.TABLES WHERE TABLE_TYPE='BASE TABLE' AND TABLE_SCHEMA='"+SCHEMA+"' ORDER BY TABLE_NAME";
+        cargarDatosComboxBox(sql,INDEX_Create_cmbShowTable);
+        INDEX_Create_txtNameIndex.setText("");
+        INDEX_Create_txtCodition.setText("");
+        INDEX_Create_cmbShowTable.setSelectedIndex(-1);
+        INDEX_Create_cmbShowSchema.setSelectedItem(SCHEMA);
+        jCheckBox1.setSelected(false);
+        INDEX_updateTextArea();
+    }
+
+    private void INDEX_updateTextArea() {
+        String schema=INDEX_Create_cmbShowSchema.getSelectedItem().toString();
+        String table=(INDEX_Create_cmbShowTable.getSelectedItem()!=null?INDEX_Create_cmbShowTable.getSelectedItem().toString():"");
+        String nameIndex=INDEX_Create_txtNameIndex.getText();
+        String condition=INDEX_Create_txtCodition.getText();
+        boolean unique=jCheckBox1.isSelected();
+        INDEX_Create_txtAstateman.setText("CREATE "+(unique?"UNIQUE ":"")+"INDEX "+nameIndex+" ON \""+schema+"\"."+table+" ("+condition+")");
+       
+    }
+    
+    private void INDEX_createIndex(){
+        try {
+            database.ejecutarOperacion(INDEX_Create_txtAstateman.getText());
+           JOptionPane.showMessageDialog(null, "El indice creado exitosamente");
+           INDEXES_cargarIndexes();
+            cambiarParentContainer(pnl_ManagerIndexes);
+        } catch (SQLException ex) {
+             JOptionPane.showMessageDialog(null, "Error al intentar crear indices","Error",JOptionPane.ERROR_MESSAGE);
+            Logger.getLogger(JF_PrincipalPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void FUNCTIONS_cargar(){
+        String sql="SELECT FUNCNAME FROM SYSCAT.FUNCTIONS WHERE FUNCSCHEMA= '"+SCHEMA+"'";
+        cargarList(sql, FUNCTIONS_listFunctions);
+    }
+    
+    private void DataBase_crear(){
+        try {
+            database.ejecutarOperacion("CREATE SCHEMA "+Database_TextName.getText());
+            JOptionPane.showConfirmDialog(null, "Esquema Creado");
+            Database_TextName.setText("");
+        } catch (SQLException ex) {
+            Logger.getLogger(JF_PrincipalPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+    }
+    
+    private void DataBase_cargar(){
+        String sql="SELECT SCHEMANAME FROM SYSCAT.SCHEMATA";
+        cargarList(sql, Database_listDatabase);
+    }
+    private void DataBase_delete(){
+        int op=JOptionPane.showConfirmDialog(null,"¿Desea el esquema seleccionado?","ELIMINAR ESQUEMA",JOptionPane.YES_NO_OPTION);
+            if(op==JOptionPane.YES_OPTION){
+             try {
+                database.ejecutarOperacion("DROP SCHEMA "+Database_listDatabase.getSelectedValue()+" RESTRICT");
+                JOptionPane.showConfirmDialog(null, "Esquema Borrado");
+            } catch (SQLException ex) {
+                Logger.getLogger(JF_PrincipalPage.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
     
 }
             
-            
-        
-    
-        
-

@@ -9,7 +9,11 @@ package Clases;
  *
  * @author ANDY ESCOBAR
  */
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class Tabla {
@@ -97,6 +101,10 @@ public class Tabla {
       return "CREATE TABLE "+getColumnas();
     }
     
+    public String getEliminarCheck(String nameCk,String nombreT,String schem){
+        return "ALTER TABLE \""+schem+"\"."+nombreT+" DROP CHECK "+nameCk;
+    
+    } 
      private int getCantidadPK() {
         int cont=0;
       for (Columna campo : campos) {
@@ -106,6 +114,24 @@ public class Tabla {
       }
         return cont;
     }
+     
+     public String getAlterTableCheck(Database data,String nomcheck,String Schema){
+         String script="ALTER TABLE ";
+         String nombreTabla="";
+         String nombreSchema="";
+         ResultSet rs;
+      try {
+            rs = data.getConsulta("SELECT TBNAME,TBCREATOR FROM SYSIBM.SYSCHECKS WHERE TBCREATOR= '"+Schema+"' AND NAME='"+nomcheck+"'");
+           while(rs.next()){
+                nombreTabla=rs.getString(1);
+                nombreSchema=rs.getString(2);
+            }
+           script+=nombreTabla+"\n ADD CONSTRAINT "+nomcheck+" CHECK ";
+        } catch (SQLException ex) {
+          Logger.getLogger(Tabla.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return script;
+     }
   
     public String getScriptUpdateTable(){
       return "ALTER TABLE "+getColumnas();
@@ -201,6 +227,15 @@ public class Tabla {
         }
             
         return script;
+    }
+
+    public String getColumnaIndexes(String columns) {
+        String cadenanueva=columns.replace("+",",");
+        if(cadenanueva.charAt(0)==','){
+             return cadenanueva.substring(1,cadenanueva.length());
+        }
+        return cadenanueva;
+        
     }
 
    
